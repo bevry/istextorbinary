@@ -35,7 +35,6 @@
     "node": ">=0.4"
   },
   "dependencies": {
-    "safefs": "~3.0.6",
     "textextensions": "~1.0.0",
     "binaryextensions": "~1.0.0"
   },
