@@ -1,5 +1,9 @@
 # History
 
+## v1.0.2 January 16, 2015
+- Fixed build
+- Added test for text files
+
 ## v1.0.1 January 16, 2015
 - Cleaned up thanks to [Shunnosuke Watanabe](https://github.com/shinnn) for [pull request #2](https://github.com/bevry/istextorbinary/pull/2)
 
