@@ -1,7 +1,7 @@
 {
   "title": "Is Text or Binary?",
   "name": "istextorbinary",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Determines if a buffer is comprised of text or binary",
   "homepage": "https://github.com/bevry/istextorbinary",
   "license": {
@@ -10,9 +10,14 @@
   "badges": {
     "travis": true,
     "npm": true,
-    "gittip": "bevry",
+    "npmdownloads": true,
+    "david": true,
+    "daviddev": true,
+    "gratipay": "bevry",
     "flattr": "344188/balupton-on-Flattr",
-    "paypal": "QB8GQPZAH84N6"
+    "paypal": "QB8GQPZAH84N6",
+    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a",
+    "wishlist": "http://amzn.com/w/2F8TXKSNAFG4V"
   },
   "keywords": [
     "text",
@@ -23,7 +28,10 @@
   "maintainers": [
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
   ],
-  "contributors": [],
+  "contributors": [
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
+    "shinnn (https://github.com/shinnn)"
+  ],
   "bugs": {
     "url": "https://github.com/bevry/istextorbinary/issues"
   },

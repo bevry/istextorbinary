@@ -8,11 +8,16 @@
 
 <!-- BADGES/ -->
 
-[![Build Status](http://img.shields.io/travis-ci/bevry/istextorbinary.png?branch=master)](http://travis-ci.org/bevry/istextorbinary "Check this project's build status on TravisCI")
-[![NPM version](http://badge.fury.io/js/istextorbinary.png)](https://npmjs.org/package/istextorbinary "View this project on NPM")
-[![Gittip donate button](http://img.shields.io/gittip/bevry.png)](https://www.gittip.com/bevry/ "Donate weekly to this project using Gittip")
-[![Flattr donate button](http://img.shields.io/flattr/donate.png?color=yellow)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
-[![PayPayl donate button](http://img.shields.io/paypal/donate.png?color=yellow)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
+[![Build Status](https://img.shields.io/travis/bevry/istextorbinary/master.svg)](http://travis-ci.org/bevry/istextorbinary "Check this project's build status on TravisCI")
+[![NPM version](https://img.shields.io/npm/v/istextorbinary.svg)](https://npmjs.org/package/istextorbinary "View this project on NPM")
+[![NPM downloads](https://img.shields.io/npm/dm/istextorbinary.svg)](https://npmjs.org/package/istextorbinary "View this project on NPM")
+[![Dependency Status](https://img.shields.io/david/bevry/istextorbinary.svg)](https://david-dm.org/bevry/istextorbinary)
+[![Dev Dependency Status](https://img.shields.io/david/dev/bevry/istextorbinary.svg)](https://david-dm.org/bevry/istextorbinary#info=devDependencies)<br/>
+[![Gratipay donate button](https://img.shields.io/gratipay/bevry.svg)](https://www.gratipay.com/bevry/ "Donate weekly to this project using Gratipay")
+[![Flattr donate button](https://img.shields.io/badge/flattr-donate-yellow.svg)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
+[![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
+[![BitCoin donate button](https://img.shields.io/badge/bitcoin-donate-yellow.svg)](https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a "Donate once-off to this project using BitCoin")
+[![Wishlist browse button](https://img.shields.io/badge/wishlist-donate-yellow.svg)](http://amzn.com/w/2F8TXKSNAFG4V "Buy an item on our wishlist for us")
 
 <!-- /BADGES -->
 
@@ -28,13 +33,9 @@ Determines if a buffer is comprised of text or binary
 
 ## Install
 
-### [Node](http://nodejs.org/), [Browserify](http://browserify.org/)
+### [NPM](http://npmjs.org/)
 - Use: `require('istextorbinary')`
 - Install: `npm install --save istextorbinary`
-
-### [Ender](http://ender.jit.su/)
-- Use: `require('istextorbinary')`
-- Install: `ender add istextorbinary`
 
 <!-- /INSTALL -->
 
@@ -58,7 +59,7 @@ require('istextorbinary').isText(filename, buffer, function(err, result){
 <!-- HISTORY/ -->
 
 ## History
-[Discover the change history by heading on over to the `History.md` file.](https://github.com/bevry/istextorbinary/blob/master/History.md#files)
+[Discover the change history by heading on over to the `HISTORY.md` file.](https://github.com/bevry/istextorbinary/blob/master/HISTORY.md#files)
 
 <!-- /HISTORY -->
 
@@ -67,7 +68,7 @@ require('istextorbinary').isText(filename, buffer, function(err, result){
 
 ## Contribute
 
-[Discover how you can contribute by heading on over to the `Contributing.md` file.](https://github.com/bevry/istextorbinary/blob/master/Contributing.md#files)
+[Discover how you can contribute by heading on over to the `CONTRIBUTING.md` file.](https://github.com/bevry/istextorbinary/blob/master/CONTRIBUTING.md#files)
 
 <!-- /CONTRIBUTE -->
 
@@ -86,14 +87,20 @@ These amazing people are maintaining this project:
 
 No sponsors yet! Will you be the first?
 
-[![Gittip donate button](http://img.shields.io/gittip/bevry.png)](https://www.gittip.com/bevry/ "Donate weekly to this project using Gittip")
-[![Flattr donate button](http://img.shields.io/flattr/donate.png?color=yellow)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
-[![PayPayl donate button](http://img.shields.io/paypal/donate.png?color=yellow)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
+[![Gratipay donate button](https://img.shields.io/gratipay/bevry.svg)](https://www.gratipay.com/bevry/ "Donate weekly to this project using Gratipay")
+[![Flattr donate button](https://img.shields.io/badge/flattr-donate-yellow.svg)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
+[![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
+[![BitCoin donate button](https://img.shields.io/badge/bitcoin-donate-yellow.svg)](https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a "Donate once-off to this project using BitCoin")
+[![Wishlist browse button](https://img.shields.io/badge/wishlist-donate-yellow.svg)](http://amzn.com/w/2F8TXKSNAFG4V "Buy an item on our wishlist for us")
 
 ### Contributors
 
-No contributors yet! Will you be the first?
-[Discover how you can contribute by heading on over to the `Contributing.md` file.](https://github.com/bevry/istextorbinary/blob/master/Contributing.md#files)
+These amazing people have contributed code to this project:
+
+- [Benjamin Lupton](https://github.com/balupton) <b@lupton.cc> — [view contributions](https://github.com/bevry/istextorbinary/commits?author=balupton)
+- [shinnn](https://github.com/shinnn) — [view contributions](https://github.com/bevry/istextorbinary/commits?author=shinnn)
+
+[Become a contributor!](https://github.com/bevry/istextorbinary/blob/master/CONTRIBUTING.md#files)
 
 <!-- /BACKERS -->
 
