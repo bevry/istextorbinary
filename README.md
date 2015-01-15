@@ -82,6 +82,8 @@ require('istextorbinary').isText(filename, buffer, function(err, result){
 These amazing people are maintaining this project:
 
 - Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)
+- Rob Loach <robloach@gmail.com> (https://github.com/robloach)
+- Michael Mooring <mike@mdm.cc> (https://github.com/mikeumus)
 
 ### Sponsors
 
