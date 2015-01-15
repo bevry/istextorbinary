@@ -1,6 +1,5 @@
 # Import
 pathUtil = require('path')
-safefs = require('safefs')
 textExtensions = require('textextensions')
 binaryExtensions = require('binaryextensions')
 
