@@ -140,7 +140,11 @@ actions =
 			return step4()  if !config.DOCPAD_SRC_PATH or !fsUtil.existsSync(DOCPAD)
 			console.log('docpad generate')
 			spawn(NODE, [DOCPAD, 'generate'], {stdio:'inherit', cwd:APP_PATH}).on('close', safe next, step4)
-		step4 = next
+		step4 = ->
+			console.log('copy fixtures')
+			args = ['-R', config.FIXTURES_PATH, config.FIXTURES_OUT_PATH]
+			spawn('cp', args, {stdio:'inherit', cwd:APP_PATH}).on('close', safe next, step5)
+		step5 = next
 
 		# Start
 		step1()
