@@ -63,6 +63,8 @@
   },
   "main": "./out/lib/istextorbinary.js",
   "cakeConfiguration": {
-    "COFFEE_SRC_PATH": "src"
+    "COFFEE_SRC_PATH": "src",
+    "FIXTURES_PATH": "src/test/fixtures",
+    "FIXTURES_OUT_PATH": "out/test"
   }
 }
