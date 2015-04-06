@@ -22,8 +22,9 @@ isTextOrBinary =
 			# Extract filename
 			filename = pathUtil.basename(filename).split('.')
 
-			# Cycle extensions
-			for extension in filename
+
+			# Cycle extensions in reverse order
+			for extension in filename.reverse()
 				if extension in textExtensions
 					isText = true
 					break
