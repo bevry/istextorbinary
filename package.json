@@ -4,9 +4,7 @@
   "version": "1.0.2",
   "description": "Determines if a buffer is comprised of text or binary",
   "homepage": "https://github.com/bevry/istextorbinary",
-  "license": {
-    "type": "MIT"
-  },
+  "license": "MIT",
   "badges": {
     "travis": true,
     "npm": true,
