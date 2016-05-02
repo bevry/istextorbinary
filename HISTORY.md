@@ -5,7 +5,7 @@
 - Fixed `getEncoding` and `isText` not handling errors correctly
 - Right-most extension takes preference, instead of left-most
   - Thanks to [Ian Sibner](https://github.com/sibnerian) for [pull request #5](https://github.com/bevry/istextorbinary/pull/5)
-  - This has bumped the major, as it changes the output result, which could potentially break some apps
+  - **This has bumped the major** as it changes the output result, which could potentially break some apps, despite the API remaining exactly the same
 
 ## v1.0.2 2015 January 16
 - Fixed build
