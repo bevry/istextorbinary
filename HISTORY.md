@@ -1,5 +1,8 @@
 # History
 
+## v2.0.0 2016 May 10
+- Support v2 of [textextensions](https://github.com/bevry/textextensions) and [binaryextensions](https://github.com/bevry/binaryextensions)
+
 ## v2.0.0 2016 May 2
 - Converted from CoffeeScript to JavaScript
 - Fixed `getEncoding` and `isText` not handling errors correctly
