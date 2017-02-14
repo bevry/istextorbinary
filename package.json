@@ -8,7 +8,11 @@
   "keywords": [
     "text",
     "binary",
-    "encoding"
+    "encoding",
+    "isbinaryfile",
+    "is binary file",
+    "istextfile",
+    "is text file"
   ],
   "badges": {
     "list": [
