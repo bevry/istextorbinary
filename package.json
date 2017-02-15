@@ -9,6 +9,12 @@
     "text",
     "binary",
     "encoding",
+    "istext",
+    "is text",
+    "isbinary",
+    "is binary"
+    "is text or binary",
+    "is text or binary file",
     "isbinaryfile",
     "is binary file",
     "istextfile",
