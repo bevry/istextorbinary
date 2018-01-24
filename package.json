@@ -1,7 +1,7 @@
 {
   "title": "Is Text or Binary?",
   "name": "istextorbinary",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Determines if a buffer is comprised of text or binary",
   "homepage": "https://github.com/bevry/istextorbinary",
   "license": "MIT",
@@ -58,7 +58,8 @@
   "contributors": [
     "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
     "Shinnosuke Watanabe <snnskwtnb@gmail.com> (http://shinnn.github.io)",
-    "Ian Sibner <sibnerian@gmail.com> (http://www.sibnerian.com/)"
+    "Ian Sibner <sibnerian@gmail.com> (http://www.sibnerian.com/)",
+    "Sean <albinodrought@gmail.com> (https://github.com/AlbinoDrought)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/istextorbinary/issues"

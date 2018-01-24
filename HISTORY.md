@@ -1,6 +1,11 @@
 # History
 
-## v2.0.0 2016 May 10
+## v2.2.0 2018 January 24
+- Fixed invalid `package.json` error
+    - Thanks to [Sean](https://github.com/AlbinoDrought) for [pull request #8](https://github.com/bevry/istextorbinary/pull/8)
+- Updated base files
+
+## v2.1.0 2016 May 10
 - Support v2 of [textextensions](https://github.com/bevry/textextensions) and [binaryextensions](https://github.com/bevry/binaryextensions)
 
 ## v2.0.0 2016 May 2
