@@ -1,4 +1,5 @@
 /* eslint no-use-before-define:0 */
+'use strict'
 
 // Import
 const pathUtil = require('path')
@@ -19,17 +20,17 @@ function isTextSync (filename, buffer) {
 	let isText = null
 
 	// Test extensions
-	if ( filename ) {
+	if (filename) {
 		// Extract filename
 		const parts = pathUtil.basename(filename).split('.').reverse()
 
 		// Cycle extensions
-		for ( const extension of parts ) {
-			if ( textExtensions.indexOf(extension) !== -1 ) {
+		for (const extension of parts) {
+			if (textExtensions.indexOf(extension) !== -1) {
 				isText = true
 				break
 			}
-			if ( binaryExtensions.indexOf(extension) !== -1 ) {
+			if (binaryExtensions.indexOf(extension) !== -1) {
 				isText = false
 				break
 			}
@@ -37,7 +38,7 @@ function isTextSync (filename, buffer) {
 	}
 
 	// Fallback to encoding if extension check was not enough
-	if ( buffer && isText === null ) {
+	if (buffer && isText === null) {
 		isText = getEncodingSync(buffer) === 'utf8'
 	}
 
@@ -55,7 +56,7 @@ function isTextSync (filename, buffer) {
  */
 function isText (filename, buffer, next) {
 	const result = isTextSync(filename, buffer)
-	if ( result instanceof Error ) {
+	if (result instanceof Error) {
 		next(result)
 	}
 	else {
@@ -87,7 +88,7 @@ function isBinarySync (filename, buffer) {
 function isBinary (filename, buffer, next) {
 	// Handle
 	isText(filename, buffer, function (err, result) {
-		if ( err )  return next(err)
+		if (err) return next(err)
 		return next(null, !result)
 	})
 }
@@ -108,18 +109,18 @@ function getEncodingSync (buffer, opts) {
 	const binaryEncoding = 'binary'
 
 	// Discover
-	if ( opts == null ) {
+	if (opts == null) {
 		// Start
 		const chunkLength = 24
-		let encoding = getEncodingSync(buffer, {chunkLength})
-		if ( encoding === textEncoding ) {
+		let encoding = getEncodingSync(buffer, { chunkLength })
+		if (encoding === textEncoding) {
 			// Middle
 			let chunkBegin = Math.max(0, Math.floor(buffer.length / 2) - chunkLength)
-			encoding = getEncodingSync(buffer, {chunkLength, chunkBegin})
-			if ( encoding === textEncoding ) {
+			encoding = getEncodingSync(buffer, { chunkLength, chunkBegin })
+			if (encoding === textEncoding) {
 				// End
 				chunkBegin = Math.max(0, buffer.length - chunkLength)
-				encoding = getEncodingSync(buffer, {chunkLength, chunkBegin})
+				encoding = getEncodingSync(buffer, { chunkLength, chunkBegin })
 			}
 		}
 
@@ -128,15 +129,15 @@ function getEncodingSync (buffer, opts) {
 	}
 	else {
 		// Extract
-		const {chunkLength = 24, chunkBegin = 0} = opts
+		const { chunkLength = 24, chunkBegin = 0 } = opts
 		const chunkEnd = Math.min(buffer.length, chunkBegin + chunkLength)
 		const contentChunkUTF8 = buffer.toString(textEncoding, chunkBegin, chunkEnd)
 		let encoding = textEncoding
 
 		// Detect encoding
-		for ( let i = 0; i < contentChunkUTF8.length; ++i ) {
+		for (let i = 0; i < contentChunkUTF8.length; ++i) {
 			const charCode = contentChunkUTF8.charCodeAt(i)
-			if ( charCode === 65533 || charCode <= 8 ) {
+			if (charCode === 65533 || charCode <= 8) {
 				// 8 and below are control characters (e.g. backspace, null, eof, etc.)
 				// 65533 is the unknown character
 				// console.log(charCode, contentChunkUTF8[i])
@@ -161,7 +162,7 @@ function getEncodingSync (buffer, opts) {
 function getEncoding (buffer, opts, next) {
 	// Fetch and wrap result
 	const result = getEncodingSync(buffer, opts)
-	if ( result instanceof Error ) {
+	if (result instanceof Error) {
 		next(result)
 	}
 	else {
@@ -170,4 +171,4 @@ function getEncoding (buffer, opts, next) {
 }
 
 // Export
-module.exports = {isTextSync, isText, isBinarySync, isBinary, getEncodingSync, getEncoding}
+module.exports = { isTextSync, isText, isBinarySync, isBinary, getEncodingSync, getEncoding }

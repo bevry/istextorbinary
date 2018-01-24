@@ -1,9 +1,10 @@
 /* eslint no-sync:0 */
+'use strict'
 
 // Import
-const {join} = require('path')
-const {readFileSync} = require('fs')
-const {equal} = require('assert-helpers')
+const { join } = require('path')
+const { readFileSync } = require('fs')
+const { equal } = require('assert-helpers')
 const joe = require('joe')
 const isTextOrBinary = require('../')
 
