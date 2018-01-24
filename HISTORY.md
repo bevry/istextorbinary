@@ -1,5 +1,8 @@
 # History
 
+## v2.2.1 2018 January 24
+- Added missing development dependency
+
 ## v2.2.0 2018 January 24
 - Fixed invalid `package.json` error
     - Thanks to [Sean](https://github.com/AlbinoDrought) for [pull request #8](https://github.com/bevry/istextorbinary/pull/8)
