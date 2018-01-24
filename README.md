@@ -77,7 +77,7 @@ require('istextorbinary').isText(filename, buffer, function(err, result){
 // You can supply text or buffer, or both text and buffer, the more provided, the more accurate the result
 ```
 
-[API Documentation.](http://master.istextorbinary.bevry.surge.sh/docs/)
+[API Documentation](http://master.istextorbinary.bevry.surge.sh/docs/)
 
 
 <!-- HISTORY/ -->
