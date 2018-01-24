@@ -100,9 +100,9 @@
   "main": "index.js",
   "browser": "es2015/index.js",
   "dependencies": {
-    "binaryextensions": "1 || 2",
+    "binaryextensions": "2",
     "editions": "^1.3.3",
-    "textextensions": "1 || 2"
+    "textextensions": "2"
   },
   "devDependencies": {
     "assert-helpers": "^4.5.0",
@@ -110,7 +110,6 @@
     "babel-preset-es2015": "^6.24.1",
     "documentation": "^5.3.5",
     "eslint": "^4.16.0",
-    "eslint-plugin-babel": "^3.2.0",
     "joe": "^2.0.2",
     "joe-reporter-console": "^2.0.1",
     "projectz": "^1.4.0"
