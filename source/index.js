@@ -10,9 +10,10 @@ const binaryExtensions = require('binaryextensions')
  * Is Text (Synchronous)
  * Determine whether or not a file is a text or binary file.
  * Determined by extension checks first, then if unknown extension, will fallback on encoding detection.
- * We do that as encoding detection cannot guarantee everything, especially for chars between utf8 and utf16
- * @param {?string} filename - the filename for the file/buffer if available
- * @param {?Buffer} buffer - the buffer for the file if available
+ * We do that as encoding detection cannot guarantee everything, especially for chars between utf8 and utf16.
+ * We use the extensions from https://github.com/bevry/textextensions and https://github.com/bevry/binaryextensions
+ * @param {string?} filename - the filename for the file/buffer if available
+ * @param {Buffer?} buffer - the buffer for the file if available
  * @returns {Error|boolean}
  */
 function isTextSync (filename, buffer) {
@@ -49,8 +50,8 @@ function isTextSync (filename, buffer) {
 /**
  * Is Text
  * Uses `isTextSync` behind the scenes.
- * @param {?string} filename - forwarded to `isTextSync`
- * @param {?Buffer} buffer - forwarded to `isTextSync`
+ * @param {string?} filename - forwarded to `isTextSync`
+ * @param {Buffer?} buffer - forwarded to `isTextSync`
  * @param {Function} next - accepts arguments: (error: Error, result: Boolean)
  * @returns {nothing}
  */
@@ -67,8 +68,8 @@ function isText (filename, buffer, next) {
 /**
  * Is Binary (Synchronous)
  * Uses `isTextSync` behind the scenes.
- * @param {?string} filename - forwarded to `isTextSync`
- * @param {?Buffer} buffer - forwarded to `isTextSync`
+ * @param {string?} filename - forwarded to `isTextSync`
+ * @param {Buffer?} buffer - forwarded to `isTextSync`
  * @returns {Error|boolean}
  */
 function isBinarySync (filename, buffer) {
@@ -80,8 +81,8 @@ function isBinarySync (filename, buffer) {
 /**
  * Is Binary
  * Uses `isText` behind the scenes.
- * @param {?string} filename - forwarded to `isText`
- * @param {?Buffer} buffer - forwarded to `isText`
+ * @param {string?} filename - forwarded to `isText`
+ * @param {Buffer?} buffer - forwarded to `isText`
  * @param {Function} next - accepts arguments: (error: Error, result: Boolean)
  * @returns {nothing}
  */
@@ -98,9 +99,9 @@ function isBinary (filename, buffer, next) {
  * We fetch a bunch chars from the start, middle and end of the buffer.
  * We check all three, as doing only start was not enough, and doing only middle was not enough, so better safe than sorry.
  * @param {Buffer} buffer
- * @param {?Object} [opts]
- * @param {?number} [opts.chunkLength = 24]
- * @param {?number} [opts.chunkBegin = 0]
+ * @param {Object?} [opts]
+ * @param {number?} [opts.chunkLength = 24]
+ * @param {number?} [opts.chunkBegin = 0]
  * @returns {Error|string} either an Error instance if something went wrong, or if successful "utf8" or "binary"
  */
 function getEncodingSync (buffer, opts) {
