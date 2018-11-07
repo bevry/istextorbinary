@@ -1,0 +1,21 @@
+<template name="auth">
+  <view class="auth-wrap">
+    <view class="auth-logo box box-tb box-align-center">
+      <image src="../../../images/link-logo.png" class="auth-logo-img"></image>
+      <text class="auth-company-name fs-32">街电科技</text>
+    </view>
+    <view class="auth-desc box box-tb">
+      <text class="fs-28 auth-desc-title">登录后开发者将获得以下权限</text>
+      <text class="fs-26  box box-lr box-align-center">获取你的公开信息（昵称头像等）</text>
+    </view>
+    <auth-button
+      btn-open-type="{{btnOpenType}}"
+      custom-data="{{customData}}"
+      data-custom-data="{{customData}}"
+      auth-btn-class="auth-page-class"
+      bind:auth="onClickAuth">确认登录</auth-button>
+    <view class="auth-protocol fs-24">
+      登录即表示同意 <text bindtap="jumpToTerms" data-url="https://appstatic.ankerjiedian.com/app/dist/term.html" class="auth-terms">《街电用户协议》</text>
+    </view>
+  </view>
+</template>

@@ -117,9 +117,9 @@
   "main": "index.js",
   "browser": "edition-browsers/index.js",
   "dependencies": {
-    "binaryextensions": "2",
+    "binaryextensions": "^2.1.2",
     "editions": "^2.0.2",
-    "textextensions": "2"
+    "textextensions": "^2.4.0"
   },
   "devDependencies": {
     "assert-helpers": "^4.5.1",
