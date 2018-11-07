@@ -1,7 +1,7 @@
 {
   "title": "Is Text or Binary?",
   "name": "istextorbinary",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Determines if a buffer is comprised of text or binary",
   "homepage": "https://github.com/bevry/istextorbinary",
   "license": "MIT",

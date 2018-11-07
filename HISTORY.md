@@ -1,5 +1,9 @@
 # History
 
+## v2.3.0 2018 November 7
+- Ensure that [textextensions](https://github.com/bevry/textextensions) and [binaryextensions](https://github.com/bevry/binaryextensions) are the latest versions at the time of publishing
+- Updated [base files](https://github.com/bevry/base) and [editions](https://github.com/bevry/editions) using [boundation](https://github.com/bevry/boundation)
+
 ## v2.2.1 2018 January 24
 - Added missing development dependency
 

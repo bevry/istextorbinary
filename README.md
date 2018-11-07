@@ -45,7 +45,7 @@ Determines if a buffer is comprised of text or binary
 <a href="http://browserify.org" title="Browserify lets you require('modules') in the browser by bundling up all of your dependencies"><h3>Browserify</h3></a><ul>
 <li>Install: <code>npm install --save istextorbinary</code></li>
 <li>Module: <code>require('istextorbinary')</code></li>
-<li>CDN URL: <code>//wzrd.in/bundle/istextorbinary@2.2.1</code></li></ul>
+<li>CDN URL: <code>//wzrd.in/bundle/istextorbinary@2.3.0</code></li></ul>
 
 <a href="http://enderjs.com" title="Ender is a full featured package manager for your browser"><h3>Ender</h3></a><ul>
 <li>Install: <code>ender add istextorbinary</code></li>
@@ -77,7 +77,7 @@ require('istextorbinary').isText(filename, buffer, function(err, result){
 // You can supply text or buffer, or both text and buffer, the more provided, the more accurate the result
 ```
 
-[API Documentation](http://master.istextorbinary.bevry.surge.sh/docs/)
+[API Documentation.](http://master.istextorbinary.bevry.surge.sh/docs/)
 
 
 <!-- HISTORY/ -->
@@ -106,7 +106,7 @@ require('istextorbinary').isText(filename, buffer, function(err, result){
 
 These amazing people are maintaining this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/istextorbinary">view contributions</a></li>
+<ul><li><a href="http://balupton.com">Benjamin Lupton</a></li>
 <li><a href="https://github.com/robloach">Rob Loach</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=robloach" title="View the GitHub contributions of Rob Loach on repository bevry/istextorbinary">view contributions</a></li>
 <li><a href="https://github.com/mikeumus">Michael Mooring</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=mikeumus" title="View the GitHub contributions of Michael Mooring on repository bevry/istextorbinary">view contributions</a></li></ul>
 
@@ -129,10 +129,10 @@ No sponsors yet! Will you be the first?
 
 These amazing people have contributed code to this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/istextorbinary">view contributions</a></li>
-<li><a href="http://shinnn.github.io">Shinnosuke Watanabe</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=shinnn" title="View the GitHub contributions of Shinnosuke Watanabe on repository bevry/istextorbinary">view contributions</a></li>
-<li><a href="http://www.sibnerian.com/">Ian Sibner</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=sibnerian" title="View the GitHub contributions of Ian Sibner on repository bevry/istextorbinary">view contributions</a></li>
-<li><a href="http://albinodrought.com/">Sean</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=AlbinoDrought" title="View the GitHub contributions of Sean on repository bevry/istextorbinary">view contributions</a></li></ul>
+<ul><li><a href="http://balupton.com">Benjamin Lupton</a></li>
+<li><a href="http://shinnn.github.io">Shinnosuke Watanabe</a></li>
+<li><a href="http://www.sibnerian.com/">Ian Sibner</a></li>
+<li><a href="http://albinodrought.com/">Sean</a></li></ul>
 
 <a href="https://github.com/bevry/istextorbinary/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
