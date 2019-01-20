@@ -1,5 +1,9 @@
 # History
 
+## v2.4.1 2019 January 21
+
+-   README now elaborates on the operation of this package
+
 ## v2.4.0 2019 January 20
 
 -   Asynchronous methods now `try...catch` the synchronous methods to ensure an error from invalid inputs would be given to the callback.

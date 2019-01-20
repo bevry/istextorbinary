@@ -29,10 +29,27 @@
 
 <!-- DESCRIPTION/ -->
 
-Determines if a buffer is comprised of text or binary
+Determine if a filename and/or buffer is a text file or binary file. Smarter detection than the other solutions.
 
 <!-- /DESCRIPTION -->
 
+
+Determination works like so:
+
+1. If filename is available, check if its extension is a [text extension](https://github.com/bevry/textextensions) or if it is a [binary extension](https://github.com/bevry/binaryextensions), this is near instant.
+2. If no filename was provided, or the extension check was indeterminate, then check the buffer.
+
+The buffer check (with the default options) will check 24 bytes at the start, middle, and end of the buffer. History has shown that checking all three locations is mandatory for accuracy, and that anything less is not accurate. This technique offers superior performance while still offering superior accuracy. Alternatives generally just do 1000 bytes at the start, which is slower, and inaccurate.
+
+One cannot just do the buffer check alone because UTF16 characters are indistinguishable from binary which would return an inaccurate result, hence why the combination is necessary for accuracy, with performance for known extensions a side-effect.
+
+As such, this library's combination of text check (if filename is provided), then buffer check (if buffer is provided), offers superior performance and accuracy to alternatives.
+
+Ever since 2012, this module's superior accuracy and performance has been essential to the operation of [DocPad](https://docpad.org) and its other dependents.
+
+## Usage
+
+[Complete API Documentation.](http://master.istextorbinary.bevry.surge.sh/docs/)
 
 <!-- INSTALL/ -->
 
@@ -75,10 +92,6 @@ This project provides its type information via inline <a href="http://usejsdoc.o
 
 <!-- /INSTALL -->
 
-
-## Usage
-
-[API Documentation.](http://master.istextorbinary.bevry.surge.sh/docs/)
 
 <!-- HISTORY/ -->
 

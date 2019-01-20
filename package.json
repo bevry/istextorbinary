@@ -1,8 +1,8 @@
 {
   "title": "Is Text or Binary?",
   "name": "istextorbinary",
-  "version": "2.4.0",
-  "description": "Determines if a buffer is comprised of text or binary",
+  "version": "2.4.1",
+  "description": "Determine if a filename and/or buffer is a text file or binary file. Smarter detection than the other solutions.",
   "homepage": "https://github.com/bevry/istextorbinary",
   "license": "MIT",
   "keywords": [
