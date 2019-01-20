@@ -1,33 +1,50 @@
 # History
 
+## v2.4.0 2019 January 20
+
+-   Asynchronous methods now `try...catch` the synchronous methods to ensure an error from invalid inputs would be given to the callback.
+    -   Before they would not do any `try...catch` so if invalid inputs were given, the error would throw.
+-   The JSDoc documentation has been updated for accuracy.
+    -   It previously indicated that the return types of the sync methods could have been an error instance, this was incorrect, they would throw if received invalid inputs.
+    -   It previously indicated that the result for of the async `getEncoding` callback was a boolean, this was incorrect, it would be the string result of `getEncodingSync`.
+-   Updated [base files](https://github.com/bevry/base) and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v2.3.0 2018 November 7
-- Ensure that [textextensions](https://github.com/bevry/textextensions) and [binaryextensions](https://github.com/bevry/binaryextensions) are the latest versions at the time of publishing
-- Updated [base files](https://github.com/bevry/base) and [editions](https://github.com/bevry/editions) using [boundation](https://github.com/bevry/boundation)
+
+-   Ensure that [textextensions](https://github.com/bevry/textextensions) and [binaryextensions](https://github.com/bevry/binaryextensions) are the latest versions at the time of publishing
+-   Updated [base files](https://github.com/bevry/base) and [editions](https://github.com/bevry/editions) using [boundation](https://github.com/bevry/boundation)
 
 ## v2.2.1 2018 January 24
-- Added missing development dependency
+
+-   Added missing development dependency
 
 ## v2.2.0 2018 January 24
-- Fixed invalid `package.json` error
-    - Thanks to [Sean](https://github.com/AlbinoDrought) for [pull request #8](https://github.com/bevry/istextorbinary/pull/8)
-- Updated base files
+
+-   Fixed invalid `package.json` error
+    -   Thanks to [Sean](https://github.com/AlbinoDrought) for [pull request #8](https://github.com/bevry/istextorbinary/pull/8)
+-   Updated base files
 
 ## v2.1.0 2016 May 10
-- Support v2 of [textextensions](https://github.com/bevry/textextensions) and [binaryextensions](https://github.com/bevry/binaryextensions)
+
+-   Support v2 of [textextensions](https://github.com/bevry/textextensions) and [binaryextensions](https://github.com/bevry/binaryextensions)
 
 ## v2.0.0 2016 May 2
-- Converted from CoffeeScript to JavaScript
-- Fixed `getEncoding` and `isText` not handling errors correctly
-- Right-most extension takes preference, instead of left-most
-  - Thanks to [Ian Sibner](https://github.com/sibnerian) for [pull request #5](https://github.com/bevry/istextorbinary/pull/5)
-  - **This has bumped the major** as it changes the output result, which could potentially break some apps, despite the API remaining exactly the same
+
+-   Converted from CoffeeScript to JavaScript
+-   Fixed `getEncoding` and `isText` not handling errors correctly
+-   Right-most extension takes preference, instead of left-most
+    -   Thanks to [Ian Sibner](https://github.com/sibnerian) for [pull request #5](https://github.com/bevry/istextorbinary/pull/5)
+    -   **This has bumped the major** as it changes the output result, which could potentially break some apps, despite the API remaining exactly the same
 
 ## v1.0.2 2015 January 16
-- Fixed build
-- Added test for text files
+
+-   Fixed build
+-   Added test for text files
 
 ## v1.0.1 2015 January 16
-- Cleaned up thanks to [Shunnosuke Watanabe](https://github.com/shinnn) for [pull request #2](https://github.com/bevry/istextorbinary/pull/2)
+
+-   Cleaned up thanks to [Shunnosuke Watanabe](https://github.com/shinnn) for [pull request #2](https://github.com/bevry/istextorbinary/pull/2)
 
 ## v1.0.0 2013 October 25
-- Initial release extracted from [balupton/bal-util](https://github.com/balupton/bal-util/blob/6501d51bc0244fce3781fc0150136f7493099237/src/lib/paths.coffee#L100-L201) where it was introduced [2012 September 24](https://github.com/balupton/bal-util/blob/master/HISTORY.md#v1137-2012-september-24).
+
+-   Initial release extracted from [balupton/bal-util](https://github.com/balupton/bal-util/blob/6501d51bc0244fce3781fc0150136f7493099237/src/lib/paths.coffee#L100-L201) where it was introduced [2012 September 24](https://github.com/balupton/bal-util/blob/master/HISTORY.md#v1137-2012-september-24).

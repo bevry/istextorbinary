@@ -38,47 +38,47 @@ Determines if a buffer is comprised of text or binary
 
 <h2>Install</h2>
 
-<a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>NPM</h3></a><ul>
+<a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
+<ul>
 <li>Install: <code>npm install --save istextorbinary</code></li>
-<li>Module: <code>require('istextorbinary')</code></li></ul>
+<li>Require: <code>require('istextorbinary')</code></li>
+</ul>
 
-<a href="http://browserify.org" title="Browserify lets you require('modules') in the browser by bundling up all of your dependencies"><h3>Browserify</h3></a><ul>
-<li>Install: <code>npm install --save istextorbinary</code></li>
-<li>Module: <code>require('istextorbinary')</code></li>
-<li>CDN URL: <code>//wzrd.in/bundle/istextorbinary@2.3.0</code></li></ul>
+<a href="https://jspm.io" title="Native ES Modules CDN"><h3>jspm</h3></a>
 
-<a href="http://enderjs.com" title="Ender is a full featured package manager for your browser"><h3>Ender</h3></a><ul>
-<li>Install: <code>ender add istextorbinary</code></li>
-<li>Module: <code>require('istextorbinary')</code></li></ul>
+``` html
+<script type="module">
+    import * as pkg from '//dev.jspm.io/istextorbinary'
+</script>
+```
 
-<h3><a href="https://github.com/bevry/editions" title="Editions are the best way to produce and consume packages you care about.">Editions</a></h3>
+<h3><a href="https://editions.bevry.me" title="Editions are the best way to produce and consume packages you care about.">Editions</a></h3>
 
 <p>This package is published with the following editions:</p>
 
-<ul><li><code>istextorbinary</code> aliases <code>istextorbinary/index.js</code> which uses <a href="https://github.com/bevry/editions" title="Editions are the best way to produce and consume packages you care about.">Editions</a> to automatically select the correct edition for the consumers environment</li>
+<ul><li><code>istextorbinary</code> aliases <code>istextorbinary/index.js</code> which uses <a href="https://editions.bevry.me" title="Editions are the best way to produce and consume packages you care about.">Editions</a> to automatically select the correct edition for the consumers environment</li>
 <li><code>istextorbinary/source/index.js</code> is esnext source code with require for modules</li>
 <li><code>istextorbinary/edition-browsers/index.js</code> is esnext compiled for browsers with require for modules</li>
-<li><code>istextorbinary/edition-node-0.12/index.js</code> is esnext compiled for node.js >=0.12 with require for modules</li></ul>
+<li><code>istextorbinary/edition-node-0.12/index.js</code> is esnext compiled for node.js 0.12 with require for modules</li></ul>
+
+<h3><a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a></h3>
+
+This project provides its type information via inline <a href="http://usejsdoc.org" title="JSDoc is an API documentation generator for JavaScript, similar to Javadoc or phpDocumentor">JSDoc Comments</a>. To make use of this in <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a>, set your <code>maxNodeModuleJsDepth</code> compiler option to `5` or thereabouts. You can accomlish this via your `tsconfig.json` file like so:
+
+``` json
+{
+  "compilerOptions": {
+    "maxNodeModuleJsDepth": 5
+  }
+}
+```
 
 <!-- /INSTALL -->
 
 
 ## Usage
 
-``` javascript
-// Synchronous API
-var result = require('istextorbinary').isTextSync(filename, buffer)
-
-// Asynchronous API
-require('istextorbinary').isText(filename, buffer, function(err, result){
-  // ...
-})
-
-// You can supply text or buffer, or both text and buffer, the more provided, the more accurate the result
-```
-
 [API Documentation.](http://master.istextorbinary.bevry.surge.sh/docs/)
-
 
 <!-- HISTORY/ -->
 
@@ -106,7 +106,7 @@ require('istextorbinary').isText(filename, buffer, function(err, result){
 
 These amazing people are maintaining this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a></li>
+<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/istextorbinary">view contributions</a></li>
 <li><a href="https://github.com/robloach">Rob Loach</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=robloach" title="View the GitHub contributions of Rob Loach on repository bevry/istextorbinary">view contributions</a></li>
 <li><a href="https://github.com/mikeumus">Michael Mooring</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=mikeumus" title="View the GitHub contributions of Michael Mooring on repository bevry/istextorbinary">view contributions</a></li></ul>
 
@@ -129,10 +129,10 @@ No sponsors yet! Will you be the first?
 
 These amazing people have contributed code to this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a></li>
-<li><a href="http://shinnn.github.io">Shinnosuke Watanabe</a></li>
-<li><a href="http://www.sibnerian.com/">Ian Sibner</a></li>
-<li><a href="http://albinodrought.com/">Sean</a></li></ul>
+<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/istextorbinary">view contributions</a></li>
+<li><a href="http://shinnn.github.io">Shinnosuke Watanabe</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=shinnn" title="View the GitHub contributions of Shinnosuke Watanabe on repository bevry/istextorbinary">view contributions</a></li>
+<li><a href="http://www.sibnerian.com/">Ian Sibner</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=sibnerian" title="View the GitHub contributions of Ian Sibner on repository bevry/istextorbinary">view contributions</a></li>
+<li><a href="http://albinodrought.com/">Sean</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=AlbinoDrought" title="View the GitHub contributions of Sean on repository bevry/istextorbinary">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/istextorbinary/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 

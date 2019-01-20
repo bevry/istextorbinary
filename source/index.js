@@ -7,23 +7,53 @@ const textExtensions = require('textextensions')
 const binaryExtensions = require('binaryextensions')
 
 /**
- * Is Text (Synchronous)
- * Determine whether or not a file is a text or binary file.
- * Determined by extension checks first, then if unknown extension, will fallback on encoding detection.
- * We do that as encoding detection cannot guarantee everything, especially for chars between utf8 and utf16.
- * We use the extensions from https://github.com/bevry/textextensions and https://github.com/bevry/binaryextensions
- * @param {string?} filename - the filename for the file/buffer if available
- * @param {Buffer?} buffer - the buffer for the file if available
- * @returns {Error|boolean}
+ * @typedef {'utf8'|'binary'} EncodingResult
  */
-function isTextSync (filename, buffer) {
+
+/**
+ * @typedef {Object} EncodingOpts
+ * @property {number} [chunkLength = 24]
+ * @property {number} [chunkBegin = 0]
+ */
+
+/**
+ * @callback IsTextCallback
+ * @param {Error?} error
+ * @param {boolean} [result]
+ */
+
+/**
+ * @callback IsBinaryCallback
+ * @param {Error?} error
+ * @param {boolean} [result]
+ */
+
+/**
+ * @callback GetEncodingCallback
+ * @param {Error?} error
+ * @param {EncodingResult} [encoding]
+ */
+
+/**
+ * Determine if the filename and/or buffer is text.
+ * Determined by extension checks first (if filename is available), otherwise if unknown extension or no filename, will perform a slower buffer encoding detection.
+ * This order is done, as extension checks are quicker, and also because encoding checks cannot guarantee accuracy for chars between utf8 and utf16.
+ * The extension checks are performed using the resources https://github.com/bevry/textextensions and https://github.com/bevry/binaryextensions
+ * @param {string} [filename] The filename for the file/buffer if available
+ * @param {Buffer} [buffer] The buffer for the file if available
+ * @returns {boolean}
+ */
+function isTextSync(filename, buffer) {
 	// Prepare
 	let isText = null
 
 	// Test extensions
 	if (filename) {
 		// Extract filename
-		const parts = pathUtil.basename(filename).split('.').reverse()
+		const parts = pathUtil
+			.basename(filename)
+			.split('.')
+			.reverse()
 
 		// Cycle extensions
 		for (const extension of parts) {
@@ -48,50 +78,52 @@ function isTextSync (filename, buffer) {
 }
 
 /**
- * Is Text
- * Uses `isTextSync` behind the scenes.
- * @param {string?} filename - forwarded to `isTextSync`
- * @param {Buffer?} buffer - forwarded to `isTextSync`
- * @param {Function} next - accepts arguments: (error: Error, result: Boolean)
- * @returns {nothing}
+ * Determine if the filename and/or buffer is text.
+ * Uses {@link isTextSync} behind the scenes.
+ * @param {string?} filename Forwarded to `isTextSync`
+ * @param {Buffer?} buffer Forwarded to `isTextSync`
+ * @param {IsTextCallback} next
+ * @returns {void}
  */
-function isText (filename, buffer, next) {
-	const result = isTextSync(filename, buffer)
-	if (result instanceof Error) {
-		next(result)
+function isText(filename, buffer, next) {
+	let result
+	try {
+		result = isTextSync(filename, buffer)
+	} catch (err) {
+		next(err)
 	}
-	else {
-		next(null, result)
-	}
+	next(null, result)
 }
 
 /**
- * Is Binary (Synchronous)
- * Uses `isTextSync` behind the scenes.
- * @param {string?} filename - forwarded to `isTextSync`
- * @param {Buffer?} buffer - forwarded to `isTextSync`
- * @returns {Error|boolean}
+ * Determine if the filename and/or buffer is binary.
+ * Uses {@link isTextSync} behind the scenes.
+ * @param {string} [filename] Forwarded to `isTextSync`
+ * @param {Buffer} [buffer] Forwarded to `isTextSync`
+ * @returns {boolean}
  */
-function isBinarySync (filename, buffer) {
+function isBinarySync(filename, buffer) {
 	// Handle
 	const result = isTextSync(filename, buffer)
-	return result instanceof Error ? result : !result
+	return !result
 }
 
 /**
- * Is Binary
- * Uses `isText` behind the scenes.
- * @param {string?} filename - forwarded to `isText`
- * @param {Buffer?} buffer - forwarded to `isText`
- * @param {Function} next - accepts arguments: (error: Error, result: Boolean)
- * @returns {nothing}
+ * Determine if the filename and/or buffer is binary.
+ * Uses {@link isTextSync} behind the scenes.
+ * @param {string?} filename Forwarded to `isText`
+ * @param {Buffer?} buffer Forwarded to `isText`
+ * @param {IsBinaryCallback} next
+ * @returns {void}
  */
-function isBinary (filename, buffer, next) {
-	// Handle
-	isText(filename, buffer, function (err, result) {
-		if (err) return next(err)
-		return next(null, !result)
-	})
+function isBinary(filename, buffer, next) {
+	let result
+	try {
+		result = isTextSync(filename, buffer)
+	} catch (err) {
+		next(err)
+	}
+	next(null, !result)
 }
 
 /**
@@ -99,12 +131,10 @@ function isBinary (filename, buffer, next) {
  * We fetch a bunch chars from the start, middle and end of the buffer.
  * We check all three, as doing only start was not enough, and doing only middle was not enough, so better safe than sorry.
  * @param {Buffer} buffer
- * @param {Object?} [opts]
- * @param {number?} [opts.chunkLength = 24]
- * @param {number?} [opts.chunkBegin = 0]
- * @returns {Error|string} either an Error instance if something went wrong, or if successful "utf8" or "binary"
+ * @param {EncodingOpts} [opts]
+ * @returns {EncodingResult}
  */
-function getEncodingSync (buffer, opts) {
+function getEncodingSync(buffer, opts) {
 	// Prepare
 	const textEncoding = 'utf8'
 	const binaryEncoding = 'binary'
@@ -127,13 +157,11 @@ function getEncodingSync (buffer, opts) {
 
 		// Return
 		return encoding
-	}
-	else {
+	} else {
 		// Extract
 		const { chunkLength = 24, chunkBegin = 0 } = opts
 		const chunkEnd = Math.min(buffer.length, chunkBegin + chunkLength)
 		const contentChunkUTF8 = buffer.toString(textEncoding, chunkBegin, chunkEnd)
-		let encoding = textEncoding
 
 		// Detect encoding
 		for (let i = 0; i < contentChunkUTF8.length; ++i) {
@@ -142,34 +170,40 @@ function getEncodingSync (buffer, opts) {
 				// 8 and below are control characters (e.g. backspace, null, eof, etc.)
 				// 65533 is the unknown character
 				// console.log(charCode, contentChunkUTF8[i])
-				encoding = binaryEncoding
-				break
+				return binaryEncoding
 			}
 		}
 
 		// Return
-		return encoding
+		return textEncoding
 	}
 }
 
 /**
- * Get the encoding of a buffer
- * Uses `getEncodingSync` behind the scenes.
- * @param {Buffer} buffer - forwarded to `getEncodingSync`
- * @param {Object} opts - forwarded to `getEncodingSync`
- * @param {Function} next - accepts arguments: (error: Error, result: Boolean)
- * @returns {nothing}
+ * Get the encoding of a buffer.
+ * Uses {@link getEncodingSync} behind the scenes.
+ * @param {Buffer} buffer Forwarded to `getEncodingSync`
+ * @param {EncodingOpts} opts Forwarded to `getEncodingSync`
+ * @param {GetEncodingCallback} next
+ * @returns {void}
  */
-function getEncoding (buffer, opts, next) {
-	// Fetch and wrap result
-	const result = getEncodingSync(buffer, opts)
-	if (result instanceof Error) {
-		next(result)
+function getEncoding(buffer, opts, next) {
+	/** @type {EncodingResult?} */
+	let result
+	try {
+		result = getEncodingSync(buffer, opts)
+	} catch (err) {
+		next(err)
 	}
-	else {
-		next(null, result)
-	}
+	next(null, result)
 }
 
 // Export
-module.exports = { isTextSync, isText, isBinarySync, isBinary, getEncodingSync, getEncoding }
+module.exports = {
+	isTextSync,
+	isText,
+	isBinarySync,
+	isBinary,
+	getEncodingSync,
+	getEncoding
+}
