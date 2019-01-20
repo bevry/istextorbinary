@@ -1,5 +1,9 @@
 # History
 
+## v2.4.2 2019 January 21
+
+-   Added more keywords to `package.json`
+
 ## v2.4.1 2019 January 21
 
 -   README now elaborates on the operation of this package

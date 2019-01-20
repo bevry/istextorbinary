@@ -29,7 +29,7 @@
 
 <!-- DESCRIPTION/ -->
 
-Determine if a filename and/or buffer is a text file or binary file. Smarter detection than the other solutions.
+Determine if a filename and/or buffer is text or binary. Smarter detection than the other solutions.
 
 <!-- /DESCRIPTION -->
 
