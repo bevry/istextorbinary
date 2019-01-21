@@ -12,57 +12,115 @@ const isTextOrBinary = require('../')
 const fixturesPath = join(__dirname, '..', 'test-fixtures')
 
 // Tests
+const tests = [
+	{
+		filename: __filename,
+		text: true,
+		binary: false,
+		encoding: 'utf8'
+	},
+	{
+		filename: join(fixturesPath, 'image.jpg'),
+		text: false,
+		binary: true,
+		encoding: 'binary'
+	},
+	{
+		filename: join(fixturesPath, 'issue9.wxml'),
+		text: true,
+		binary: false,
+		encoding: 'binary' // fails encoding detection
+	},
+	{
+		filename: join(fixturesPath, 'jpg_disguised_as.txt'),
+		text: true, // fails extension detection
+		binary: false, // fails extension detection
+		encoding: 'binary'
+	},
+	{
+		filename: join(fixturesPath, 'jpg_right_to_left.jpg.txt.unknown'),
+		text: true,
+		binary: false,
+		encoding: 'binary'
+	},
+	{
+		filename: join(fixturesPath, 'jpg_no_extension'),
+		text: false,
+		binary: true,
+		encoding: 'binary'
+	},
+	{
+		filename: join(fixturesPath, 'txt_disguised_as.jpg'),
+		text: false, // fails extension detection
+		binary: true, // fails extension detection
+		encoding: 'utf8'
+	},
+	{
+		filename: join(fixturesPath, 'txt_right_to_left.txt.jpg.unknown'),
+		text: false,
+		binary: true,
+		encoding: 'utf8'
+	},
+	{
+		filename: join(fixturesPath, 'txt_no_extension'),
+		text: true,
+		binary: false,
+		encoding: 'utf8'
+	},
+	{
+		filename: null,
+		text: null,
+		binary: null,
+		encoding: null
+	}
+]
+
+// Tests
 kava.suite('istextorbinary', function(suite, test) {
-	test('should detect this is a text file', function() {
-		equal(isTextOrBinary.isTextSync(__filename), true, 'should be text')
-	})
+	tests.forEach(function({ filename, text, binary, encoding }) {
+		test(filename, function() {
+			const buffer = filename ? readFileSync(filename) : null
+			// text
+			equal(isTextOrBinary.isTextSync(filename, buffer), text, 'isTextSync')
+			isTextOrBinary.isTextCallback(filename, buffer, (error, result) =>
+				equal(result, text, 'isTextCallback')
+			)
+			isTextOrBinary
+				.isTextPromise(filename, buffer)
+				.then(result => equal(result, text, 'isTextPromise'))
+			equal(isTextOrBinary.isText(filename, buffer), text, 'isText sync')
+			isTextOrBinary.isText(filename, buffer, (error, result) =>
+				equal(result, text, 'isText async')
+			)
+			// binary
+			equal(
+				isTextOrBinary.isBinarySync(filename, buffer),
+				binary,
+				'isBinarySync'
+			)
+			isTextOrBinary.isBinaryCallback(filename, buffer, (error, result) =>
+				equal(result, binary, 'isBinaryCallback')
+			)
+			isTextOrBinary
+				.isBinaryPromise(filename, buffer)
+				.then(result => equal(result, binary, 'isBinaryPromise'))
 
-	test('should detect a text file based on buffer', function() {
-		const filename = join(fixturesPath, 'some_file_without_extension')
-		const buffer = readFileSync(filename)
-		equal(isTextOrBinary.isTextSync(filename, buffer), true, 'should be text')
-	})
-
-	test('should detect wxml as text due to extension check, despite false flag from encoding check', function() {
-		const filename = join(fixturesPath, 'issue9.wxml')
-		const buffer = readFileSync(filename)
-		equal(isTextOrBinary.isTextSync(filename, buffer), true, 'should be text')
-		equal(
-			isTextOrBinary.isBinarySync(filename, buffer),
-			false,
-			'should not be binary'
-		)
-	})
-
-	test('should detect "jpg.unusual_extension" as binary, even if it is really text', function() {
-		const filename = join(fixturesPath, 'jpg.unusual_extension')
-		const buffer = readFileSync(filename)
-		equal(
-			isTextOrBinary.isTextSync(filename, buffer),
-			false,
-			'should not be text'
-		)
-		equal(
-			isTextOrBinary.isBinarySync(filename, buffer),
-			true,
-			'should be binary'
-		)
-	})
-
-	test('should detect that a jpg is binary', function() {
-		const filename = join(fixturesPath, 'penguin.jpg')
-		equal(isTextOrBinary.isTextSync(filename), false, 'should not be text')
-		equal(isTextOrBinary.isBinarySync(filename), true, 'should be binary')
-	})
-
-	test('should detect "txt.penguin" as binary, even if it is really a jpg', function() {
-		const filename = join(fixturesPath, 'txt.penguin')
-		const buffer = readFileSync(filename)
-		equal(isTextOrBinary.isTextSync(filename, buffer), true, 'should be text')
-		equal(
-			isTextOrBinary.isBinarySync(filename, buffer),
-			false,
-			'should not be binary'
-		)
+			equal(isTextOrBinary.isBinary(filename, buffer), binary, 'isBinary sync')
+			isTextOrBinary.isBinary(filename, buffer, (error, result) =>
+				equal(result, binary, 'isBinary async')
+			)
+			// encoding
+			equal(isTextOrBinary.getEncodingSync(buffer), encoding, 'getEncodingSync')
+			isTextOrBinary.getEncodingCallback(buffer, null, (error, result) =>
+				equal(result, encoding, 'getEncodingCallback')
+			)
+			isTextOrBinary
+				.getEncodingPromise(buffer)
+				.then(result => equal(result, encoding, 'getEncodingPromise'))
+			equal(isTextOrBinary.getEncoding(buffer), encoding, 'getEncoding sync')
+			isTextOrBinary.getEncoding(buffer, null, (error, result) =>
+				equal(result, encoding, 'getEncoding async')
+			)
+		})
 	})
 })

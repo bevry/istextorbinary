@@ -36,20 +36,38 @@ Determine if a filename and/or buffer is text or binary. Smarter detection than 
 
 Determination works like so:
 
-1. If filename is available, check if its extension is a [text extension](https://github.com/bevry/textextensions) or if it is a [binary extension](https://github.com/bevry/binaryextensions), this is near instant.
-2. If no filename was provided, or the extension check was indeterminate, then check the buffer.
+1. Extension Check: If filename is available, check if any of its extensions (from right to left) are an [text extension](https://github.com/bevry/textextensions) or a [binary extension](https://github.com/bevry/binaryextensions), this is near instant.
+2. Buffer Check: If no filename was provided, or the extension check was indeterminate, then check the buffer.
 
-The buffer check (with the default options) will check 24 bytes at the start, middle, and end of the buffer. History has shown that checking all three locations is mandatory for accuracy, and that anything less is not accurate. This technique offers superior performance while still offering superior accuracy. Alternatives generally just do 1000 bytes at the start, which is slower, and inaccurate.
+The extension check will check each of the filenames extensions, from right to left. This is done, as certain applications utilise multiple extensions for transformations, such as `app.x.y` may tell a compiler to transform from `x` format to `y` format, if `x` is not a recognized extension but `y` is a recognized extension, then we can make use of that, to provide accuracy and convenience.
 
-One cannot just do the buffer check alone because UTF16 characters are indistinguishable from binary which would return an inaccurate result, hence why the combination is necessary for accuracy, with performance for known extensions a side-effect.
+The contents check (with the default options) will check 24 bytes at the start, middle, and end of the buffer. History has shown that checking all three locations is mandatory for accuracy, and that anything less is not accurate. This technique offers superior performance while still offering superior accuracy. Alternatives generally just do 1000 bytes at the start, which is slower, and inaccurate.
 
-As such, this library's combination of text check (if filename is provided), then buffer check (if buffer is provided), offers superior performance and accuracy to alternatives.
+One cannot just do the contents check alone because UTF16 characters are indistinguishable from binary which would return an inaccurate result, hence why the combination is necessary for accuracy, with performance for known extensions a side-effect.
+
+As such, this library's combination of extension check (if filename is provided), then contents check (if buffer is provided), offers superior performance and accuracy to alternatives.
 
 Ever since 2012, this module's superior accuracy and performance has been essential to the operation of [DocPad](https://docpad.org) and its other dependents.
 
 ## Usage
 
 [Complete API Documentation.](http://master.istextorbinary.bevry.surge.sh/docs/)
+
+```javascript
+const { isText, isBuffer, getEncoding } = require('istextorbinary')
+
+isText(aFilename) // returns true if a text file otherwise false, checks only filename
+isText(null, aBuffer) // returns true if a text file otherwise false, checks only buffer
+isText(aFilename, aBuffer) // returns true if a text file otherwise false, checks filename then buffer
+isText(null, null) // returns null
+
+isBinary(aFilename) // returns true if a binary file otherwise false, checks only filename
+isBinary(null, aBuffer) // returns true if a binary file otherwise false, checks only buffer
+isBinary(aFilename, aBuffer) // returns true if a binary file otherwise false, checks filename then buffer
+isBinary(null, null) // returns null
+
+getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, otherwise returns 'utf8'
+```
 
 <!-- INSTALL/ -->
 
@@ -119,7 +137,7 @@ This project provides its type information via inline <a href="http://usejsdoc.o
 
 These amazing people are maintaining this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/istextorbinary">view contributions</a></li>
+<ul><li><a href="http://balupton.com">Benjamin Lupton</a></li>
 <li><a href="https://github.com/robloach">Rob Loach</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=robloach" title="View the GitHub contributions of Rob Loach on repository bevry/istextorbinary">view contributions</a></li>
 <li><a href="https://github.com/mikeumus">Michael Mooring</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=mikeumus" title="View the GitHub contributions of Michael Mooring on repository bevry/istextorbinary">view contributions</a></li></ul>
 
@@ -142,10 +160,10 @@ No sponsors yet! Will you be the first?
 
 These amazing people have contributed code to this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/istextorbinary">view contributions</a></li>
-<li><a href="http://shinnn.github.io">Shinnosuke Watanabe</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=shinnn" title="View the GitHub contributions of Shinnosuke Watanabe on repository bevry/istextorbinary">view contributions</a></li>
-<li><a href="http://www.sibnerian.com/">Ian Sibner</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=sibnerian" title="View the GitHub contributions of Ian Sibner on repository bevry/istextorbinary">view contributions</a></li>
-<li><a href="http://albinodrought.com/">Sean</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=AlbinoDrought" title="View the GitHub contributions of Sean on repository bevry/istextorbinary">view contributions</a></li></ul>
+<ul><li><a href="http://balupton.com">Benjamin Lupton</a></li>
+<li><a href="http://shinnn.github.io">Shinnosuke Watanabe</a></li>
+<li><a href="http://www.sibnerian.com/">Ian Sibner</a></li>
+<li><a href="http://albinodrought.com/">Sean</a></li></ul>
 
 <a href="https://github.com/bevry/istextorbinary/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 

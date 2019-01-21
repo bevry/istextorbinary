@@ -1,5 +1,31 @@
 # History
 
+## v2.5.0 2019 January 21
+
+As the detection algorithms are result returns, with the asynchronous signatures just wrappers, we have changed `isText`, `isBinary`, and `getEncoding` to return the result if no callback was provided to them, maintaining backwards compatibility, but encouraging intuitive usage of the methods with the least overhead.
+
+-   The following methods have had return signatures added to them, which should be the preferable usage:
+
+    -   `isText`, which you should use instead of `isTextSync` (a method which only lingers for backwards compatibility)
+    -   `isBinary`, which you should use instead of `isBinarySync` (a method which only lingers for backwards compatibility)
+    -   `getEncoding`, which you should use instead of `getEncoding` (a method which only lingers for backwards compatibility)
+
+-   If you require callback usage, the following callback wrapper methods have been added:
+
+    -   `isTextCallback`, which you should use instead of `isText`'s callback signature (a signature which only lingers for backwards compatibility)
+    -   `isBinaryCallback`, which you should use instead of `isBinary`'s callback signature (a signature which only lingers for backwards compatibility)
+    -   `getEncodingCallback`, which you should use instead of `getEncoding`'s callback signature (a signature which only lingers for backwards compatibility)
+
+-   If you require promise usage, the following promise wrapper methods have been added:
+
+    -   `isTextPromise` which wraps `isText` with a promise signature
+    -   `isBinaryPromise` which wraps `isBinary` with a promise signature
+    -   `getEncodingPromise` which wraps `getEncoding` with a promise signature
+
+-   `isBinary` method now correctly returns `null` instead of `true` when no inputs are provided
+
+-   Added tests for all methods
+
 ## v2.4.2 2019 January 21
 
 -   Added more keywords to `package.json`
