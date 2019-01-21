@@ -81,4 +81,4 @@ As the detection algorithms are result returns, with the asynchronous signatures
 
 ## v1.0.0 2013 October 25
 
--   Initial release extracted from [balupton/bal-util](https://github.com/balupton/bal-util/blob/6501d51bc0244fce3781fc0150136f7493099237/src/lib/paths.coffee#L100-L201) where it was introduced [2012 September 24](https://github.com/balupton/bal-util/blob/master/HISTORY.md#v1137-2012-september-24).
+-   Initial release [extracted from](https://github.com/balupton/bal-util/blob/6501d51bc0244fce3781fc0150136f7493099237/src/lib/paths.coffee#L100-L201) [bal-util](https://npmjs.com/package/bal-util) where it was introduced [2012 September 24](https://github.com/balupton/bal-util/blob/master/HISTORY.md#v1137-2012-september-24).
