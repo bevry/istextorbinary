@@ -1,5 +1,11 @@
 # History
 
+## v2.5.1 2019 January 21
+
+-   Fixed a readme documentation inconsistency
+
+-   Fixed node v0.12 and v4 support (regression since v2.5.0)
+
 ## v2.5.0 2019 January 21
 
 As the detection algorithms are result returns, with the asynchronous signatures just wrappers, we have changed `isText`, `isBinary`, and `getEncoding` to return the result if no callback was provided to them, maintaining backwards compatibility, but encouraging intuitive usage of the methods with the least overhead.

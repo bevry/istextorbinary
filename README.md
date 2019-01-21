@@ -37,9 +37,9 @@ Determine if a filename and/or buffer is text or binary. Smarter detection than 
 Determination works like so:
 
 1. Extension Check: If filename is available, check if any of its extensions (from right to left) are an [text extension](https://github.com/bevry/textextensions) or a [binary extension](https://github.com/bevry/binaryextensions), this is near instant.
-2. Buffer Check: If no filename was provided, or the extension check was indeterminate, then check the buffer.
+2. Contents Check: If no filename was provided, or the extension check was indeterminate, then check the contents of the buffer.
 
-The extension check will check each of the filenames extensions, from right to left. This is done, as certain applications utilise multiple extensions for transformations, such as `app.x.y` may tell a compiler to transform from `x` format to `y` format, if `x` is not a recognized extension but `y` is a recognized extension, then we can make use of that, to provide accuracy and convenience.
+The extension check will check each of the filename's extensions, from right to left. This is done as certain applications utilise multiple extensions for transformations, such as `app.x.y` may tell a compiler to transform from `x` format to `y` format, in this case perhaps `x` is not a recognized extension but `y` is, in which case we can make use of that to provide superior accuracy and convenience compared to just checking the rightmost extension.
 
 The contents check (with the default options) will check 24 bytes at the start, middle, and end of the buffer. History has shown that checking all three locations is mandatory for accuracy, and that anything less is not accurate. This technique offers superior performance while still offering superior accuracy. Alternatives generally just do 1000 bytes at the start, which is slower, and inaccurate.
 
@@ -137,7 +137,7 @@ This project provides its type information via inline <a href="http://usejsdoc.o
 
 These amazing people are maintaining this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a></li>
+<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/istextorbinary">view contributions</a></li>
 <li><a href="https://github.com/robloach">Rob Loach</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=robloach" title="View the GitHub contributions of Rob Loach on repository bevry/istextorbinary">view contributions</a></li>
 <li><a href="https://github.com/mikeumus">Michael Mooring</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=mikeumus" title="View the GitHub contributions of Michael Mooring on repository bevry/istextorbinary">view contributions</a></li></ul>
 
@@ -160,10 +160,10 @@ No sponsors yet! Will you be the first?
 
 These amazing people have contributed code to this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a></li>
-<li><a href="http://shinnn.github.io">Shinnosuke Watanabe</a></li>
-<li><a href="http://www.sibnerian.com/">Ian Sibner</a></li>
-<li><a href="http://albinodrought.com/">Sean</a></li></ul>
+<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/istextorbinary">view contributions</a></li>
+<li><a href="http://shinnn.github.io">Shinnosuke Watanabe</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=shinnn" title="View the GitHub contributions of Shinnosuke Watanabe on repository bevry/istextorbinary">view contributions</a></li>
+<li><a href="http://www.sibnerian.com/">Ian Sibner</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=sibnerian" title="View the GitHub contributions of Ian Sibner on repository bevry/istextorbinary">view contributions</a></li>
+<li><a href="http://albinodrought.com/">Sean</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=AlbinoDrought" title="View the GitHub contributions of Sean on repository bevry/istextorbinary">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/istextorbinary/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 

@@ -62,10 +62,10 @@ function isTextSync(filename, buffer) {
 
 		// Cycle extensions
 		for (const extension of parts) {
-			if (textExtensions.includes(extension)) {
+			if (textExtensions.indexOf(extension) !== -1) {
 				return true
 			}
-			if (binaryExtensions.includes(extension)) {
+			if (binaryExtensions.indexOf(extension) !== -1) {
 				return false
 			}
 		}
