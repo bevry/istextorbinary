@@ -54,7 +54,7 @@ Ever since 2012, this module's superior accuracy and performance has been essent
 [Complete API Documentation.](http://master.istextorbinary.bevry.surge.sh/docs/)
 
 ```javascript
-const { isText, isBuffer, getEncoding } = require('istextorbinary')
+const { isText, isBinary, getEncoding } = require('istextorbinary')
 
 isText(aFilename) // returns true if a text file otherwise false, checks only filename
 isText(null, aBuffer) // returns true if a text file otherwise false, checks only buffer
