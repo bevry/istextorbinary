@@ -138,7 +138,7 @@
     "assert-helpers": "^4.9.6",
     "eslint": "^5.12.1",
     "eslint-config-bevry": "^1.1.2",
-    "eslint-config-prettier": "^3.6.0",
+    "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-prettier": "^3.0.1",
     "jsdoc": "^3.5.5",
     "kava": "^3.1.0",
