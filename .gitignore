@@ -1,4 +1,4 @@
-# 2019 January 19
+# 2019 January 26
 # https://github.com/bevry/base
 
 # System Files
@@ -24,6 +24,8 @@ build/
 bower_components/
 node_modules/
 .next/
+.pnp/
+.pnp.js
 
 # Build Outputs
 **/out.*

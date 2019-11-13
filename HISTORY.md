@@ -1,5 +1,9 @@
 # History
 
+## v2.6.0 2019 November 13
+
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v2.5.1 2019 January 21
 
 -   Fixed a readme documentation inconsistency
