@@ -6,7 +6,7 @@ const { join } = require('path')
 const { readFileSync } = require('fs')
 const { equal } = require('assert-helpers')
 const kava = require('kava')
-const isTextOrBinary = require('../')
+const isTextOrBinary = require('./')
 
 // Paths
 const fixturesPath = join(__dirname, '..', 'test-fixtures')
