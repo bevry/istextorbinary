@@ -89,10 +89,9 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 <p>This package is published with the following editions:</p>
 
-<ul><li><code>istextorbinary</code> aliases <code>istextorbinary/index.js</code> which uses <a href="https://editions.bevry.me" title="Editions are the best way to produce and consume packages you care about.">Editions</a> to automatically select the correct edition for the consumers environment</li>
+<ul><li><code>istextorbinary</code> aliases <code>istextorbinary/source/index.js</code></li>
 <li><code>istextorbinary/source/index.js</code> is esnext source code with require for modules</li>
-<li><code>istextorbinary/edition-browsers/index.js</code> is esnext compiled for browsers with require for modules</li>
-<li><code>istextorbinary/edition-node-0.12/index.js</code> is esnext compiled for node.js 0.12 with require for modules</li></ul>
+<li><code>istextorbinary/edition-browsers/index.js</code> is esnext compiled for browsers with require for modules</li></ul>
 
 <h3><a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a></h3>
 
@@ -161,7 +160,8 @@ These amazing people have contributed code to this project:
 <li><a href="http://www.sibnerian.com/">Ian Sibner</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=sibnerian" title="View the GitHub contributions of Ian Sibner on repository bevry/istextorbinary">view contributions</a></li>
 <li><a href="http://albinodrought.com/">Sean</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=AlbinoDrought" title="View the GitHub contributions of Sean on repository bevry/istextorbinary">view contributions</a></li>
 <li><a href="http://github.com/apps/dependabot">dependabot[bot]</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=dependabot[bot]" title="View the GitHub contributions of dependabot[bot] on repository bevry/istextorbinary">view contributions</a></li>
-<li><a href="http://qiita.com/shinnn">shinnn</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=shinnn" title="View the GitHub contributions of shinnn on repository bevry/istextorbinary">view contributions</a></li></ul>
+<li><a href="http://qiita.com/shinnn">shinnn</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=shinnn" title="View the GitHub contributions of shinnn on repository bevry/istextorbinary">view contributions</a></li>
+<li><a href="http://github.com/apps/dependabot-preview">dependabot-preview[bot]</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=dependabot-preview[bot]" title="View the GitHub contributions of dependabot-preview[bot] on repository bevry/istextorbinary">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/istextorbinary/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
