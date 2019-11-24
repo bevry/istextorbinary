@@ -130,7 +130,7 @@
     "eslint-config-prettier": "^6.6.0",
     "eslint-plugin-prettier": "^3.1.1",
     "jsdoc": "^3.6.3",
-    "kava": "4.0.0",
+    "kava": "4.1.0",
     "minami": "^1.2.3",
     "prettier": "^1.19.1",
     "projectz": "^1.10.0",
