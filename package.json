@@ -117,7 +117,7 @@
   "browser": "edition-browsers/index.js",
   "dependencies": {
     "binaryextensions": "^2.2.0",
-    "textextensions": "^2.6.0"
+    "textextensions": "^3.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
