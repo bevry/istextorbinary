@@ -1,7 +1,7 @@
 {
   "title": "Is Text or Binary?",
   "name": "istextorbinary",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Determine if a filename and/or buffer is text or binary. Smarter detection than the other solutions.",
   "homepage": "https://github.com/bevry/istextorbinary",
   "license": "MIT",
@@ -120,22 +120,22 @@
     "textextensions": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.0",
-    "@babel/core": "^7.7.2",
-    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-    "@babel/preset-env": "^7.7.1",
-    "assert-helpers": "5.4.0",
-    "eslint": "^6.6.0",
-    "eslint-config-bevry": "^1.3.0",
-    "eslint-config-prettier": "^6.6.0",
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "assert-helpers": "^5.6.0",
+    "eslint": "^6.7.2",
+    "eslint-config-bevry": "^2.1.0",
+    "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
     "jsdoc": "^3.6.3",
-    "kava": "4.1.0",
+    "kava": "^4.1.0",
     "minami": "^1.2.3",
     "prettier": "^1.19.1",
-    "projectz": "^1.10.0",
+    "projectz": "^1.12.0",
     "surge": "^0.21.3",
-    "valid-directory": "^1.1.1"
+    "valid-directory": "^1.3.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
