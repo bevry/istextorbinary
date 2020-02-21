@@ -8,12 +8,12 @@ const textExtensions = require('textextensions')
 const binaryExtensions = require('binaryextensions')
 
 /**
- * WIll be `null` if `buffer` was not provided. Otherwise will be either `'utf8'` or `'binary'`.
+ * Will be `null` if `buffer` was not provided. Otherwise will be either `'utf8'` or `'binary'`.
  * @typedef {'utf8'|'binary'|null} EncodingResult
  */
 
 /**
- * WIll be `null` if neither `filename` nor `buffer` were provided. Otherwise will be a boolean value with the detection result.
+ * Will be `null` if neither `filename` nor `buffer` were provided. Otherwise will be a boolean value with the detection result.
  * @typedef {boolean|null} TextOrBinaryResult
  */
 
