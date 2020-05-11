@@ -55,10 +55,7 @@ function isTextSync(filename, buffer) {
 	// Test extensions
 	if (filename) {
 		// Extract filename
-		const parts = pathUtil
-			.basename(filename)
-			.split('.')
-			.reverse()
+		const parts = pathUtil.basename(filename).split('.').reverse()
 
 		// Cycle extensions
 		for (const extension of parts) {
@@ -302,5 +299,5 @@ module.exports = {
 	getEncoding,
 	getEncodingSync,
 	getEncodingPromise,
-	getEncodingCallback
+	getEncodingCallback,
 }
