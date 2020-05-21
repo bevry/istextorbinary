@@ -83,7 +83,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/istextorbinary@4.2.0'
+    import * as pkg from '//dev.jspm.io/istextorbinary@4.3.0'
 </script>
 ```
 
