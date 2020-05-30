@@ -1,12 +1,11 @@
 /* eslint no-sync:0 */
-'use strict'
 
 // Import
-const { join } = require('path')
-const { readFileSync } = require('fs')
-const { equal } = require('assert-helpers')
-const kava = require('kava')
-const isTextOrBinary = require('./')
+import { join } from 'path'
+import { readFileSync } from 'fs'
+import { equal } from 'assert-helpers'
+import kava from 'kava'
+import { isText, isBinary, getEncoding } from './index.js'
 
 // Paths
 const fixturesPath = join(__dirname, '..', 'test-fixtures')
@@ -78,49 +77,16 @@ const tests = [
 // Tests
 kava.suite('istextorbinary', function (suite, test) {
 	tests.forEach(function ({ filename, text, binary, encoding }) {
-		test(filename, function () {
+		test(String(filename), function () {
 			const buffer = filename ? readFileSync(filename) : null
 			// text
-			equal(isTextOrBinary.isTextSync(filename, buffer), text, 'isTextSync')
-			isTextOrBinary.isTextCallback(filename, buffer, (error, result) =>
-				equal(result, text, 'isTextCallback')
-			)
-			isTextOrBinary
-				.isTextPromise(filename, buffer)
-				.then((result) => equal(result, text, 'isTextPromise'))
-			equal(isTextOrBinary.isText(filename, buffer), text, 'isText sync')
-			isTextOrBinary.isText(filename, buffer, (error, result) =>
-				equal(result, text, 'isText async')
-			)
-			// binary
-			equal(
-				isTextOrBinary.isBinarySync(filename, buffer),
-				binary,
-				'isBinarySync'
-			)
-			isTextOrBinary.isBinaryCallback(filename, buffer, (error, result) =>
-				equal(result, binary, 'isBinaryCallback')
-			)
-			isTextOrBinary
-				.isBinaryPromise(filename, buffer)
-				.then((result) => equal(result, binary, 'isBinaryPromise'))
+			equal(isText(filename, buffer), text, 'isText')
 
-			equal(isTextOrBinary.isBinary(filename, buffer), binary, 'isBinary sync')
-			isTextOrBinary.isBinary(filename, buffer, (error, result) =>
-				equal(result, binary, 'isBinary async')
-			)
+			// binary
+			equal(isBinary(filename, buffer), binary, 'isBinary')
+
 			// encoding
-			equal(isTextOrBinary.getEncodingSync(buffer), encoding, 'getEncodingSync')
-			isTextOrBinary.getEncodingCallback(buffer, null, (error, result) =>
-				equal(result, encoding, 'getEncodingCallback')
-			)
-			isTextOrBinary
-				.getEncodingPromise(buffer)
-				.then((result) => equal(result, encoding, 'getEncodingPromise'))
-			equal(isTextOrBinary.getEncoding(buffer), encoding, 'getEncoding sync')
-			isTextOrBinary.getEncoding(buffer, null, (error, result) =>
-				equal(result, encoding, 'getEncoding async')
-			)
+			equal(getEncoding(buffer), encoding, 'getEncoding')
 		})
 	})
 })

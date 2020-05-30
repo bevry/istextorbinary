@@ -1,5 +1,12 @@
 # History
 
+## v5.0.0 2020 May 30
+
+-   Potential Breaking Change: Removed the long-standing deprecated sync, callback, and promise wrappers, now the only exports are `isText`, `isBinary`, and `getEncoding`
+-   Potential Breaking Change: `getEncoding` now checks start, middle, and end if `checkBegin` was not provided. Prior functionality only checked start, middle, and end, if `opts` were not provided. This new functionality allows custom `checkLength` for start, middle, and end.
+-   Converted to TypeScript, and provided proper documentation for `isBinary` instead of just referencing `isText`, so your intellisense is now more helpful
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v4.3.0 2020 May 22
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
