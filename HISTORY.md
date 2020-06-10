@@ -1,5 +1,9 @@
 # History
 
+## v5.1.0 2020 June 10
+
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v5.0.0 2020 May 30
 
 -   Potential Breaking Change: Removed the long-standing deprecated sync, callback, and promise wrappers, now the only exports are `isText`, `isBinary`, and `getEncoding`
