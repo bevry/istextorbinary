@@ -1,6 +1,7 @@
 /* eslint no-use-before-define:0 */
 
 // Import
+import type Buffer from 'buffer'
 import pathUtil from 'path'
 import textExtensions from 'textextensions'
 import binaryExtensions from 'binaryextensions'
