@@ -2,7 +2,7 @@
 
 // Import
 import type Buffer from 'buffer'
-import pathUtil from 'path'
+import * as pathUtil from 'path'
 import textExtensions from 'textextensions'
 import binaryExtensions from 'binaryextensions'
 
