@@ -622,29 +622,13 @@ editions@^2.1.0, editions@^2.2.0:
     errlop "^2.0.0"
     semver "^6.3.0"
 
-editions@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/editions/-/editions-3.7.0.tgz#4f5da4c07b4fe328661d09a25c0e571efb1abcd6"
-  integrity sha512-RSPhxvD6EhllkWKwZxv6yZbFtcaeDNIcqfCuwor5Vmt98XOWJdQoyvjElo2lF98/n3u8Ybill2expsjy+LfQnA==
+editions@^3.4.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/editions/-/editions-3.8.0.tgz#3cb9ed892b6e7429a185a5b75b9a163db9123c04"
+  integrity sha512-S+Rh0VfbZBzl4JrUm1oc5bxIcrHSJu3a2E+LXfoQFGFbDcjc0yOs7Eyh6PbO2NxwGXeZeshwRVTdrHSDmmfIPw==
   dependencies:
-    "@bevry/update-contributors" "^1.10.0"
-    "@typescript-eslint/eslint-plugin" "^3.3.0"
-    "@typescript-eslint/parser" "^3.3.0"
-    assert-helpers "^6.10.0"
-    errlop "^3.6.0"
-    eslint "^7.3.0"
-    eslint-config-bevry "^3.9.0"
-    eslint-config-prettier "^6.11.0"
-    eslint-plugin-prettier "^3.1.4"
-    kava "^5.5.0"
-    make-deno-edition "^0.7.0"
-    prettier "^2.0.5"
-    projectz "^2.7.0"
-    semver "6.3.0"
-    surge "^0.21.3"
-    typedoc "^0.17.7"
-    typescript "^3.9.5"
-    valid-directory "^2.4.0"
+    errlop "3.5.0"
+    semver "6"
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -673,10 +657,15 @@ errlop@^2.0.0:
   resolved "https://registry.yarnpkg.com/errlop/-/errlop-2.2.0.tgz#1ff383f8f917ae328bebb802d6ca69666a42d21b"
   integrity sha512-e64Qj9+4aZzjzzFpZC7p5kmm/ccCrbLhAJplhsDXQFs87XTsXwOpH4s1Io2s90Tau/8r2j9f4l/thhDevRjzxw==
 
-errlop@^3.5.0, errlop@^3.6.0:
+errlop@^3.5.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/errlop/-/errlop-3.7.0.tgz#3706539ed5fd34a15ed29e19f7022a8aeccd151d"
   integrity sha512-oMntULsuCOyrA9mD+8q8neRc4sF6QhpT4JTlRnIhNAYpYWHZ1tspdjqQKo6f5vPE+S6hyCztI6OvUycv0B1bFQ==
+
+errlop@^3.6.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/errlop/-/errlop-3.8.0.tgz#b7c2b06de27faa6fbd768a78dc587c073de85132"
+  integrity sha512-d2VMkmCUnbQvryknB6tf9tA6XaMQVHHqa7E14O27a6LFYFEBVF6raTcLhJeHY6HQqf31A6dSgyFGtSfiUbr/Fw==
 
 es-abstract@^1.17.0-next.1, es-abstract@^1.17.4, es-abstract@^1.17.5:
   version "1.17.6"
@@ -729,10 +718,10 @@ eslint-config-bevry@3.8.0:
   dependencies:
     semver "^7.3.2"
 
-eslint-config-bevry@^3.10.0, eslint-config-bevry@^3.9.0:
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-bevry/-/eslint-config-bevry-3.10.0.tgz#12f0ae1f39e144b33a98031b40fdab5763a7d347"
-  integrity sha512-HaOvuW4lWhrw2VlDyMKPa5N4yNyJJJJDBM7A/Fp+wr/jNw2GNSf/cad2cvaOsHDNxZP6TB4muwyZvqgqURqOig==
+eslint-config-bevry@^3.10.0:
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-bevry/-/eslint-config-bevry-3.11.0.tgz#d49d8c5e0979010671ebc34bb3db77aeb9f4c3c0"
+  integrity sha512-4U8fGl9QATcNZx5ZuW5vQbNrSeoziv6pWT69zs/yNwtvXZmdL4+NtppE06BjB/FyqO3AOyCFkXW2srHeY1Pq2A==
   dependencies:
     semver "^7.3.2"
 
@@ -750,24 +739,12 @@ eslint-config-prettier@^6.7.0:
   dependencies:
     get-stdin "^6.0.0"
 
-eslint-plugin-babel@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-babel/-/eslint-plugin-babel-5.3.0.tgz#2e7f251ccc249326da760c1a4c948a91c32d0023"
-  integrity sha512-HPuNzSPE75O+SnxHIafbW5QB45r2w78fxqwK3HmjqIUoPfPzVrq6rD+CINU3yzoDSzEhUkX07VUphbF73Lth/w==
-  dependencies:
-    eslint-rule-composer "^0.3.0"
-
 eslint-plugin-prettier@^3.1.4:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-3.1.4.tgz#168ab43154e2ea57db992a2cd097c828171f75c2"
   integrity sha512-jZDa8z76klRqo+TdGDTFJSavwbnWK2ZpqGKNZ+VvweMW516pDUMmQ2koXvxEE4JhzNvTv+radye/bWGBmA6jmg==
   dependencies:
     prettier-linter-helpers "^1.0.0"
-
-eslint-rule-composer@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-rule-composer/-/eslint-rule-composer-0.3.0.tgz#79320c927b0c5c0d3d3d2b76c8b4a488f25bbaf9"
-  integrity sha512-bt+Sh8CtDmn2OajxvNO+BX7Wn4CIWMpTRm3MaiKPCQcnnlm0CS2mhui6QaoeQugs+3Kj2ESKEEGJUdVafwhiCg==
 
 eslint-scope@^5.0.0, eslint-scope@^5.1.0:
   version "5.1.0"
@@ -875,12 +852,13 @@ esutils@^2.0.2:
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
 
 event-emitter-grouped@^4.5.0, event-emitter-grouped@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/event-emitter-grouped/-/event-emitter-grouped-4.7.0.tgz#a37db73fb8e308294148e4d96b295d4da649e628"
-  integrity sha512-iqIGkGyEmblMQXKHsTZW2PVz1jNSrBv8mGFDmpFVfTb0zOLZL3hc4z5eD5ECSqZDvjh9ExIxHpYDdQzif4tYyw==
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/event-emitter-grouped/-/event-emitter-grouped-4.8.0.tgz#32300b25113f20adb0d0a741266e3aeb6d884387"
+  integrity sha512-Zv/rjDrWgamkddvsRI9qu4XBwp+p5MYSDkrPyYR5qe50I4IZKdEGJuhT/e7eZmREydCN6HZh+k5o+zv/ApnzKA==
   dependencies:
-    taskgroup "^7.8.0"
-    unbounded "^3.5.0"
+    editions "3.5.0"
+    taskgroup "7.7.0"
+    unbounded "3.4.0"
 
 extend@~3.0.2:
   version "3.0.2"
@@ -894,12 +872,13 @@ extendr@5.5.0:
   dependencies:
     typechecker "^7.4.0"
 
-extendr@^5.7.0:
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/extendr/-/extendr-5.7.0.tgz#9cfb96586809bbde402eb9ce3f9385473d37b715"
-  integrity sha512-Q9h/VklMw3eg2MdVz1gNSxHbXqxbEoq9wiln/cI0ybfdoUU0FHzRClEEKeIIzPTb/RjbOA6SmlBuus/3+gGLsQ==
+extendr@^5.5.0, extendr@^5.7.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/extendr/-/extendr-5.8.0.tgz#d05bea5a78c777ea3020154dc66c88c749a7e02a"
+  integrity sha512-ZbTYxxQPb3chPHDhz043hq7CO6gTIqaep0+ZBEES6C9zt5idJpsByYEfMzavi184XTXjSmMsW/nJ12hRj97Ffg==
   dependencies:
-    typechecker "^7.6.0"
+    editions "3.5.0"
+    typechecker "7.5.0"
 
 external-editor@^3.0.3:
   version "3.1.0"
@@ -950,29 +929,17 @@ fdir@^3.4.3:
   resolved "https://registry.yarnpkg.com/fdir/-/fdir-3.4.3.tgz#9f9470d8b06af967ddd597a381c140872d7c8b74"
   integrity sha512-JFNfD4wNQLQ/8ht/iH4dLdYYZaxNuCsld619o+eKHORVyjzcog3YU1X8kpk8J525I8EMnqBW80SceTFdLNtklA==
 
-fellow@^6.11.0, fellow@^6.12.0, fellow@^6.9.0:
-  version "6.12.0"
-  resolved "https://registry.yarnpkg.com/fellow/-/fellow-6.12.0.tgz#8012aa278c140c9e189d7c900cdee3869130bda6"
-  integrity sha512-LqCv1cpgTv4Kv1jpkBlbQ4P6tAp5FIVtO+Axw2YYNH7kYv8f00qfhMtjur2wPiaGomdPvx2nKaJqVwiS8KTvLg==
+fellow@6.10.0:
+  version "6.10.0"
+  resolved "https://registry.yarnpkg.com/fellow/-/fellow-6.10.0.tgz#c6bd7e6c7c34869ff3e726c06a8d148c44c326f8"
+  integrity sha512-YC4nniyJZxuLvHt61i1ntxoAR8RZeBXrXfzAiMpnOTk7bpn7D6K9pvc3UZ8vjt/Ci7QN1BM7rXfomm2HRW4kjA==
+
+fellow@^6.11.0, fellow@^6.9.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/fellow/-/fellow-6.13.0.tgz#68bcc076133a5e6b14667ddd587c5952eba6402f"
+  integrity sha512-ArC1Z4Ianc9mlpEv9tZ45UjlDt37W3DYSug9ZxYXfeejXZZJOs8AB5xyuYdX2aETUo0LuZmIYJxFX8HUmIRNWA==
   dependencies:
-    "@bevry/update-contributors" "^1.10.0"
-    "@typescript-eslint/eslint-plugin" "^3.3.0"
-    "@typescript-eslint/parser" "^3.3.0"
-    assert-helpers "^6.10.0"
-    eslint "^7.3.0"
-    eslint-config-bevry "^3.10.0"
-    eslint-config-prettier "^6.11.0"
-    eslint-plugin-babel "^5.3.0"
-    eslint-plugin-prettier "^3.1.4"
-    kava "^5.5.0"
-    make-deno-edition "^0.7.0"
-    prettier "^2.0.5"
-    projectz "^2.7.0"
-    surge "^0.21.3"
-    typedoc "^0.17.7"
-    typescript "^3.9.5"
-    valid-directory "^2.4.0"
-    valid-module "^1.5.0"
+    editions "3.5.0"
 
 figures@^2.0.0:
   version "2.0.0"
@@ -1061,27 +1028,12 @@ functional-red-black-tree@^1.0.1:
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
 get-cli-arg@^5.3.0, get-cli-arg@^5.5.0:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/get-cli-arg/-/get-cli-arg-5.6.0.tgz#842bddad68ff56f94f7ea30720b1f0af1ddbf6ce"
-  integrity sha512-OUWYLxzT+25YYsdtX3UxVGyHcbY/ytQfhnN1f92YXaEFXFGFNGGULsse8q4PrryQoVwilpUMN8rdnP3axYuVVQ==
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/get-cli-arg/-/get-cli-arg-5.7.0.tgz#19358bbb17a84030c74f29c355d0981054bcd986"
+  integrity sha512-Lpf1xEIIIme5EshA2ltbDgU/lpfcY6n8ntg/U7++eS6vjwtEFRf6DSGbOq5cqsAdJvO4tqER23+vi7SYlmMV4A==
   dependencies:
-    "@bevry/update-contributors" "^1.10.0"
-    "@typescript-eslint/eslint-plugin" "^3.3.0"
-    "@typescript-eslint/parser" "^3.3.0"
-    assert-helpers "^6.10.0"
-    eslint "^7.3.0"
-    eslint-config-bevry "^3.10.0"
-    eslint-config-prettier "^6.11.0"
-    eslint-plugin-prettier "^3.1.4"
-    kava "^5.5.0"
-    make-deno-edition "^0.7.0"
-    normalify "^2.11.0"
-    prettier "^2.0.5"
-    projectz "^2.7.0"
-    surge "^0.21.3"
-    typedoc "^0.17.7"
-    typescript "^3.9.5"
-    valid-directory "^2.4.0"
+    editions "3.5.0"
+    normalify "2.11.0"
 
 get-current-line@5.5.0:
   version "5.5.0"
@@ -1094,32 +1046,16 @@ get-stdin@^6.0.0:
   integrity sha512-jp4tHawyV7+fkkSKyvjuLZswblUtz+SQKzSWnBbii16BuZksJlU1wuBYXY75r+duh/llF1ur6oNwi+2ZzjKZ7g==
 
 getcontributors@^2.12.0, getcontributors@^2.14.0:
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/getcontributors/-/getcontributors-2.14.0.tgz#d62e5f282179f482e59babe08227a25ef6f415f4"
-  integrity sha512-binq+DCesTysYUXP3I0ukiCpgN/E86TeeumjQH6ScyBZ3QZ79D+kHSivWxeGzIbRVNOmuy9WD5w1fIfVELheKA==
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/getcontributors/-/getcontributors-2.15.0.tgz#e5855c9f5676c259b605e341f493dec1f4948325"
+  integrity sha512-8fZDJqwAJe5pKpzm4rDAnOo/2Vy5ruKr9idnEfUw1+OfA0+KLWo7DSYhEOei4LlBOx8U1czswxrq8lyXTbQvPg==
   dependencies:
-    "@bevry/update-contributors" "^1.10.0"
-    "@typescript-eslint/eslint-plugin" "^3.3.0"
-    "@typescript-eslint/parser" "^3.3.0"
-    assert-helpers "^6.10.0"
-    cross-fetch "^3.0.5"
-    eslint "^7.3.0"
-    eslint-config-bevry "^3.10.0"
-    eslint-config-prettier "^6.11.0"
-    eslint-plugin-prettier "^3.1.4"
-    fellow "^6.12.0"
-    getrepos "^5.7.0"
-    githubauthreq "^5.8.0"
-    kava "^5.5.0"
-    make-deno-edition "^0.7.0"
-    prettier "^2.0.5"
-    projectz "^2.7.0"
+    cross-fetch "^3.0.4"
+    editions "3.5.0"
+    fellow "6.10.0"
+    getrepos "5.6.0"
+    githubauthreq "5.7.0"
     simplytyped "^3.3.0"
-    surge "^0.21.3"
-    typedoc "^0.17.7"
-    typescript "^3.9.5"
-    valid-directory "^2.4.0"
-    valid-module "^1.5.0"
 
 getpass@^0.1.1:
   version "0.1.7"
@@ -1128,58 +1064,31 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-getrepos@^5.7.0:
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/getrepos/-/getrepos-5.8.0.tgz#cc646b8cebb666e2c138bbcfd0719b5de811cc6d"
-  integrity sha512-c3Cl7c36/bQj9jKtuoTwULW88HmutcKLohbgamdpgBYfqrXFNOorHLe+Ee5fTUYqrnIq+CY2vg2D9lVHou/ymg==
+getrepos@5.6.0:
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/getrepos/-/getrepos-5.6.0.tgz#05ad749e1b30b43207a4bc6c473a2644be881285"
+  integrity sha512-X44Sz8ZSkEUBRPJcjRlK3oU8jluaaFpRAOfIcqmQBKOBh+0/9HImI5uU5DMmwCuNPzPxW6M3rWW+UEPQsP8gsw==
   dependencies:
-    "@bevry/update-contributors" "^1.10.0"
-    "@typescript-eslint/eslint-plugin" "^3.3.0"
-    "@typescript-eslint/parser" "^3.3.0"
-    assert-helpers "^6.10.0"
-    cross-fetch "^3.0.5"
-    eslint "^7.3.0"
-    eslint-config-bevry "^3.10.0"
-    eslint-config-prettier "^6.11.0"
-    eslint-plugin-prettier "^3.1.4"
-    githubauthreq "^5.8.0"
-    kava "^5.5.0"
-    make-deno-edition "^0.8.0"
-    native-promise-pool "^3.7.0"
-    prettier "^2.0.5"
-    projectz "^2.7.0"
+    cross-fetch "^3.0.4"
+    githubauthreq "^5.6.0"
+    native-promise-pool "^3.5.0"
     simplytyped "^3.3.0"
-    surge "^0.21.3"
-    typedoc "^0.17.7"
-    typescript "^3.9.5"
-    valid-directory "^2.4.0"
-    valid-module "^1.5.0"
 
-githubauthreq@^5.8.0:
-  version "5.9.0"
-  resolved "https://registry.yarnpkg.com/githubauthreq/-/githubauthreq-5.9.0.tgz#14ec3993f4e38aac6de1fa481bf7f5bee4d26db3"
-  integrity sha512-bMSHegBlX0/dsO8bBu/aCVWAfzlJxmJNMCBtwmCVbd5K310CZHahDluJQHa3A9NXeijqFYWsIBM1TrvAQSe9vw==
+githubauthreq@5.7.0:
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/githubauthreq/-/githubauthreq-5.7.0.tgz#92cfd62044a043f364ad65043da6a1c8f512dd59"
+  integrity sha512-Jqn3AKY8yUiIrxyA/GQV7/tS5K//t8d3jxs65ElWbTEskzed/us5TgM3lowhHh36WW1dUDj/W75J5kN9Uny3Nw==
   dependencies:
-    "@bevry/update-contributors" "^1.10.0"
-    "@typescript-eslint/eslint-plugin" "^3.3.0"
-    "@typescript-eslint/parser" "^3.3.0"
-    assert-helpers "^6.10.0"
-    cross-fetch "^3.0.5"
-    editions "^3.7.0"
-    eslint "^7.3.0"
-    eslint-config-bevry "^3.10.0"
-    eslint-config-prettier "^6.11.0"
-    eslint-plugin-prettier "^3.1.4"
-    kava "^5.5.0"
-    make-deno-edition "^0.8.0"
-    prettier "^2.0.5"
-    projectz "^2.7.0"
+    editions "^3.4.0"
     simplytyped "^3.3.0"
-    surge "^0.21.3"
-    typedoc "^0.17.7"
-    typescript "^3.9.5"
-    valid-directory "^2.4.0"
-    valid-module "^1.5.0"
+
+githubauthreq@^5.6.0:
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/githubauthreq/-/githubauthreq-5.10.0.tgz#5d74abb269dc27e5bb50e823b032365b33febc9a"
+  integrity sha512-paduy1En/Pyouk7UOnvVV5ZUsoyf4Xf/bCVhznYz7VtpGsQF0MDoErwlAv2oqlsenfkIPXNPy1WS3u+ogJ2fVQ==
+  dependencies:
+    editions "3.5.0"
+    simplytyped "^3.3.0"
 
 glob-parent@^5.0.0:
   version "5.1.1"
@@ -1569,20 +1478,6 @@ make-deno-edition@0.9.1, make-deno-edition@^0.9.0:
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-make-deno-edition@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/make-deno-edition/-/make-deno-edition-0.7.0.tgz#9d0ce5279cc75e723760c9d3fdf9ba87f95c5fc9"
-  integrity sha512-Bdn2adRvV9pglOjLb8390Ydg+ijZpBlQ2u82f7abpq0qPkRtGUn+4biEyvcCcWTECbFYL6ZR85t8h4Dh9EneDQ==
-  dependencies:
-    "@types/rimraf" "^3.0.0"
-    await-spawn "^3.0.0"
-    chalk "^4.1.0"
-    errlop "^3.6.0"
-    fdir "^3.4.3"
-    get-cli-arg "^5.5.0"
-    mkdirp "^1.0.4"
-    rimraf "^3.0.2"
-
 make-deno-edition@^0.8.0:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/make-deno-edition/-/make-deno-edition-0.8.1.tgz#175c1435db17d27c4242d83d5d29be85d2d12bda"
@@ -1668,7 +1563,7 @@ mute-stream@~0.0.4:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.8.tgz#1630c42b2251ff81e2a283de96a5497ea92e5e0d"
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
 
-native-promise-pool@^3.7.0:
+native-promise-pool@^3.5.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/native-promise-pool/-/native-promise-pool-3.8.0.tgz#780d69b3f5471a94be6df744e66e78c5794a54b9"
   integrity sha512-eTGKM/5mFmWHl9p6JJVNtvutQugKRbAx4aRme3ghXgEUiwjAF43I7EuwNbPFK97qMAKHymMWpaQ6EwPSdK/CLA==
@@ -1718,29 +1613,10 @@ node-fetch@2.6.0:
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
   integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
 
-normalify@^2.11.0:
-  version "2.13.0"
-  resolved "https://registry.yarnpkg.com/normalify/-/normalify-2.13.0.tgz#b90f2f76636d665149b3122e621ed63995ee76a9"
-  integrity sha512-FC7BOBf0uc6eWjtkP6tW6Pf/Nz6EjgoKCucrOycTh2vruGZ2kpciGm+0KSL4F+r/Me2Ne2SLcniczdMT+0ThaA==
-  dependencies:
-    "@bevry/update-contributors" "^1.10.0"
-    "@typescript-eslint/eslint-plugin" "^3.3.0"
-    "@typescript-eslint/parser" "^3.3.0"
-    assert-helpers "^6.10.0"
-    eslint "^7.3.0"
-    eslint-config-bevry "^3.10.0"
-    eslint-config-prettier "^6.11.0"
-    eslint-plugin-babel "^5.3.0"
-    eslint-plugin-prettier "^3.1.4"
-    kava "^5.6.0"
-    make-deno-edition "^0.9.0"
-    prettier "^2.0.5"
-    projectz "^2.7.0"
-    surge "^0.21.3"
-    typedoc "^0.17.7"
-    typescript "^3.9.5"
-    valid-directory "^2.4.0"
-    valid-module "^1.6.0"
+normalify@2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/normalify/-/normalify-2.11.0.tgz#4e2de5e06e76e4346f8609c7e90781b260ad7481"
+  integrity sha512-t17x+NgzhvhnaS0KuYm8yZWkVfThJHAyM5AXUSoKvbbDQXH1TFQr/EPxK0lWi+KcrrGXbsmbEjRjywvk8nUgBQ==
 
 oauth-sign@~0.9.0:
   version "0.9.0"
@@ -2080,7 +1956,7 @@ safe-buffer@^5.0.1, safe-buffer@^5.1.2, safe-buffer@~5.2.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-semver@6.3.0, semver@^6.3.0:
+semver@6, semver@6.3.0, semver@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
   integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
@@ -2332,6 +2208,16 @@ tarr@1.1.0:
     fstream ">=1.0.12"
     inherits "2"
 
+taskgroup@7.7.0:
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/taskgroup/-/taskgroup-7.7.0.tgz#fa423916813676023e5acfdd652756375cccd59e"
+  integrity sha512-AzGP6+0Ur90btsHsgAjqUFZU0mswtswxgUph0dBW2BVwW0LjYJ4XI6VgS/UimaqpXR/XBR15kheVE9RKGTJAUw==
+  dependencies:
+    ambi "3.2.0"
+    eachr "^4.5.0"
+    extendr "^5.5.0"
+    unbounded "^3.3.0"
+
 taskgroup@^7.6.0, taskgroup@^7.8.0:
   version "7.9.0"
   resolved "https://registry.yarnpkg.com/taskgroup/-/taskgroup-7.9.0.tgz#409f8c5437a91b58a0a57d23e93125cf0f55c035"
@@ -2408,6 +2294,11 @@ type-fest@^0.8.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
+typechecker@7.5.0:
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/typechecker/-/typechecker-7.5.0.tgz#7e70c7e8d5ea6fc7b2ba626ab91d87578c2e306e"
+  integrity sha512-3rN7f/Tx7Ydg72sFl8Lrbl6sx4YGljmU/CVNr9Df6lRikYxd3H1HK03j+ZqE7ZS2WWOOn0YOACziAT8r+9O0fw==
+
 typechecker@^4.3.0:
   version "4.11.0"
   resolved "https://registry.yarnpkg.com/typechecker/-/typechecker-4.11.0.tgz#8219cd90d2f7b585a3f5af9c146c8a23891f1eac"
@@ -2420,7 +2311,7 @@ typechecker@^6.2.0:
   resolved "https://registry.yarnpkg.com/typechecker/-/typechecker-6.4.0.tgz#c087dc744c5a0f17524d58a17eb31a9660ab7324"
   integrity sha512-EbOu+9szY13mhl0EsvLXnR+pTCa3gTHQQPLdce72ujcC9fRHXlVFBNXtHeRhgzLxLlKUh4zA9C0tezLDgshf+A==
 
-typechecker@^7.4.0, typechecker@^7.5.0, typechecker@^7.6.0:
+typechecker@^7.4.0, typechecker@^7.5.0:
   version "7.7.0"
   resolved "https://registry.yarnpkg.com/typechecker/-/typechecker-7.7.0.tgz#719545199d89a425ba3de46fa20a614ca79f5a6a"
   integrity sha512-SYwnG7LAwJ7BVczSEUXjt4Smy16bcOdAj//WIQPhR26SSdmDraiYJ71Sib27A3KMyQb2nOKFwiL4hJEErSuZKA==
@@ -2478,7 +2369,12 @@ uglify-js@^3.1.4:
   dependencies:
     commander "~2.20.3"
 
-unbounded@^3.5.0:
+unbounded@3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/unbounded/-/unbounded-3.4.0.tgz#0e44520a5c3e5759fbf15ef32ead744046cd20a4"
+  integrity sha512-d9LOcaNowWY9zEynpOzRCd7lpABqVD7svxkUBzZ6Va5QixAL0l3VjIXHwXli00ovHj19ABBcI9VeZYOke/hTsQ==
+
+unbounded@^3.3.0, unbounded@^3.5.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/unbounded/-/unbounded-3.6.0.tgz#4dd209e2a36df9526857914521fa830353e98d3e"
   integrity sha512-hWsxvo2MylIV7C/Ggkq9UAH4Pe9CqU4VR3nsRfpBgFzx96mRapw4kvsjnqvKa3f9Af3KDFWRR8aF/6i9+GP/9g==
@@ -2557,7 +2453,7 @@ valid-module@1.4.0:
   dependencies:
     cross-fetch "^3.0.4"
 
-valid-module@^1.5.0, valid-module@^1.6.0:
+valid-module@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/valid-module/-/valid-module-1.6.0.tgz#95f36586161680760373c849802a351feeffea00"
   integrity sha512-dmMamzVA05OOyUS3btnrSnirKcqg386iQyalsN+yeonjGtf9KY1oCGwe0Tw8zIwXjQT1lK2wuhoRffffnNZodA==
