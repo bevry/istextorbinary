@@ -176,7 +176,7 @@
   "dependencies": {
     "binaryextensions": "4.2.0",
     "editions": "^3.9.0",
-    "textextensions": "5.2.0"
+    "textextensions": "5.6.0"
   },
   "devDependencies": {
     "@bevry/update-contributors": "^1.9.0",
