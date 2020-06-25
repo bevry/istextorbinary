@@ -1,7 +1,7 @@
 {
   "title": "Is Text or Binary?",
   "name": "istextorbinary",
-  "version": "5.6.0",
+  "version": "5.7.0",
   "description": "Determine if a filename and/or buffer is text or binary. Smarter detection than the other solutions.",
   "homepage": "https://github.com/bevry/istextorbinary",
   "license": "MIT",
@@ -10,10 +10,6 @@
     "binary",
     "browser",
     "check",
-    "deno",
-    "deno-edition",
-    "deno-entry",
-    "denoland",
     "detect",
     "encoding",
     "es2019",
@@ -151,51 +147,36 @@
         "node": false,
         "browsers": "defaults"
       }
-    },
-    {
-      "description": "TypeScript source code made to be compatible with Deno",
-      "directory": "edition-deno",
-      "entry": "index.ts",
-      "tags": [
-        "typescript",
-        "import",
-        "deno"
-      ],
-      "engines": {
-        "deno": true,
-        "browsers": true
-      }
     }
   ],
   "types": "./compiled-types/",
   "type": "commonjs",
   "main": "index.js",
-  "deno": "edition-deno/index.ts",
   "browser": "edition-browsers/index.js",
   "module": "edition-browsers/index.js",
   "dependencies": {
-    "binaryextensions": "4.2.0",
-    "editions": "^3.9.0",
-    "textextensions": "5.2.0"
+    "binaryextensions": "4.7.0",
+    "editions": "^3.10.0",
+    "textextensions": "5.6.0"
   },
   "devDependencies": {
-    "@bevry/update-contributors": "^1.9.0",
-    "@typescript-eslint/eslint-plugin": "^3.3.0",
-    "@typescript-eslint/parser": "^3.3.0",
-    "assert-helpers": "^6.8.0",
-    "eslint": "^7.3.0",
-    "eslint-config-bevry": "^3.8.0",
-    "eslint-config-prettier": "^6.7.0",
+    "@bevry/update-contributors": "^1.12.0",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "assert-helpers": "^6.13.0",
+    "eslint": "^7.3.1",
+    "eslint-config-bevry": "^3.13.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "kava": "^5.7.0",
-    "make-deno-edition": "^0.9.1",
+    "make-deno-edition": "^0.13.0",
     "prettier": "^2.0.5",
-    "projectz": "^2.9.0",
+    "projectz": "^2.10.1",
     "surge": "^0.21.3",
     "typedoc": "^0.17.7",
     "typescript": "^3.9.5",
     "valid-directory": "^2.5.0",
-    "valid-module": "^1.6.0"
+    "valid-module": "^1.7.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
