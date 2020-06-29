@@ -24,11 +24,11 @@
     js-tokens "^4.0.0"
 
 "@bevry/update-contributors@^1.12.0":
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/@bevry/update-contributors/-/update-contributors-1.12.0.tgz#f0779e9b0d782cec8befae0e816d498325c95292"
-  integrity sha512-Y3hdGf12vuTB6PfnSNNztLKNzi3QV6fUXsqOoM32QDeh0fYHlw1OLrBH/785RyQ6OtdhHOepImFsPAMUxtr/bQ==
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@bevry/update-contributors/-/update-contributors-1.13.0.tgz#1fbe9a19e4bf1d5dda110f40d7f5178ca3af3ed6"
+  integrity sha512-m75BZQdOKec6viMghVLqAOcYGSjlREul2XTLSGYYFyLk4u4Cs2tR+gwDsKYXlfYYhpz4lkprg7cuxN4gaSl5qQ==
   dependencies:
-    getcontributors "^2.13.0"
+    getcontributors "^2.17.0"
 
 "@types/ansicolors@^0.0.33":
   version "0.0.33"
@@ -973,7 +973,7 @@ get-stdin@^6.0.0:
   resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-6.0.0.tgz#9e09bf712b360ab9225e812048f71fde9c89657b"
   integrity sha512-jp4tHawyV7+fkkSKyvjuLZswblUtz+SQKzSWnBbii16BuZksJlU1wuBYXY75r+duh/llF1ur6oNwi+2ZzjKZ7g==
 
-getcontributors@^2.13.0:
+getcontributors@^2.17.0:
   version "2.17.0"
   resolved "https://registry.yarnpkg.com/getcontributors/-/getcontributors-2.17.0.tgz#ec5cfd036006371ed0620146b7d4578c9497f1ef"
   integrity sha512-s21snMK24xjgXUHJKuUJyfvpZBotiv8WwRSo3bAxslWndfFeXehZnNWiGl9r4OiSVPy+o4oJMHqYnMYd4RMHKg==
