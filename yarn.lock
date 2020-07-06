@@ -224,16 +224,16 @@ asn1@~0.2.3:
     safer-buffer "~2.1.0"
 
 assert-helpers@^6.13.0:
-  version "6.13.0"
-  resolved "https://registry.yarnpkg.com/assert-helpers/-/assert-helpers-6.13.0.tgz#61b469769f6a13307ec3ce94908faa99def5f217"
-  integrity sha512-plZTTRls5KhJ6IbQ9NCqhuddX9h2rlrZ9Ru8n8GrT1vw4xiT9/w0QYvGGQBRhGAQNnHtYsK1l2tLixu6OoObuQ==
+  version "6.16.0"
+  resolved "https://registry.yarnpkg.com/assert-helpers/-/assert-helpers-6.16.0.tgz#72e2734f1d3301cfdb92443c764431381ba1e7f5"
+  integrity sha512-ZMBkIPoTas4UjzPbnx7w5NGfHvw+kI8RGKKAiOBht8+nYi//FVpOwjUzzvMXmpSsZrV17TScB6kv7p4HIiLDMw==
   dependencies:
     "@types/ansicolors" "^0.0.33"
     "@types/diff" "^4.0.2"
     "@types/node" "^14.0.14"
     ansicolors "^0.3.2"
     diff "^4.0.2"
-    errlop "3.9.0"
+    errlop "^3.10.0"
 
 assert-plus@1.0.0, assert-plus@^1.0.0:
   version "1.0.0"
@@ -607,10 +607,10 @@ errlop@^2.0.0:
   resolved "https://registry.yarnpkg.com/errlop/-/errlop-2.2.0.tgz#1ff383f8f917ae328bebb802d6ca69666a42d21b"
   integrity sha512-e64Qj9+4aZzjzzFpZC7p5kmm/ccCrbLhAJplhsDXQFs87XTsXwOpH4s1Io2s90Tau/8r2j9f4l/thhDevRjzxw==
 
-errlop@^3.5.0, errlop@^3.9.0:
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/errlop/-/errlop-3.10.0.tgz#3ace18010827279e0460542c26cdff8c773f941d"
-  integrity sha512-BOIPDVJPdwXhHFg7UgubXRXjykKPVlc+nCAz/2QWqqS+DyS4nDExc8S53Pv91U5D5WbKQNcdJ65SfViVjZBSJg==
+errlop@^3.10.0, errlop@^3.5.0, errlop@^3.9.0:
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/errlop/-/errlop-3.11.0.tgz#a8774ccb49288aae0f33f1f23596a510ee7d14da"
+  integrity sha512-HTzBvv/kfASF7Br8O8WnqiV/Pqyc/E7tHX4rkiNNK75CpT25+A5cwIdxbh3JAY8gbqbkZMq1QeQX9NWPORk7XA==
 
 es-abstract@^1.17.0-next.1, es-abstract@^1.17.4, es-abstract@^1.17.5:
   version "1.17.6"
