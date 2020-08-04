@@ -93,7 +93,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//cdn.pika.dev/istextorbinary/^5.8.0'
+    import * as pkg from '//cdn.pika.dev/istextorbinary/^5.9.0'
 </script>
 ```
 
@@ -101,7 +101,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//unpkg.com/istextorbinary@^5.8.0'
+    import * as pkg from '//unpkg.com/istextorbinary@^5.9.0'
 </script>
 ```
 
@@ -109,7 +109,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/istextorbinary@5.8.0'
+    import * as pkg from '//dev.jspm.io/istextorbinary@5.9.0'
 </script>
 ```
 
