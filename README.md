@@ -89,11 +89,11 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 <li>Require: <code>const pkg = require('istextorbinary')</code></li>
 </ul>
 
-<a href="https://www.pika.dev/cdn" title="100% Native ES Modules CDN"><h3>pika</h3></a>
+<a href="https://www.skypack.dev" title="Skypack is a JavaScript Delivery Network for modern web apps"><h3>Skypack</h3></a>
 
 ``` html
 <script type="module">
-    import * as pkg from '//cdn.pika.dev/istextorbinary/^5.9.0'
+    import * as pkg from '//cdn.skypack.dev/istextorbinary@^5.10.0'
 </script>
 ```
 
@@ -101,7 +101,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//unpkg.com/istextorbinary@^5.9.0'
+    import * as pkg from '//unpkg.com/istextorbinary@^5.10.0'
 </script>
 ```
 
@@ -109,7 +109,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/istextorbinary@5.9.0'
+    import * as pkg from '//dev.jspm.io/istextorbinary@5.10.0'
 </script>
 ```
 
