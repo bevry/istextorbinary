@@ -8,12 +8,14 @@ import kava from 'kava'
 import { isText, isBinary, getEncoding } from './index.js'
 
 // Paths
-const fixturesPath = join(__dirname, '..', 'test-fixtures')
+import filedirname from 'filedirname'
+const [file, dir] = filedirname()
+const fixturesPath = join(dir, '..', 'test-fixtures')
 
 // Tests
 const tests = [
 	{
-		filename: __filename,
+		filename: file,
 		text: true,
 		binary: false,
 		encoding: 'utf8',
