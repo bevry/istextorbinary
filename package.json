@@ -128,7 +128,7 @@
       }
     },
     {
-      "description": "TypeScript compiled against ESNext for Node.js 14 || 15 with Require for modules",
+      "description": "TypeScript compiled against ESNext for Node.js >= 14 with Require for modules",
       "directory": "edition-esnext",
       "entry": "index.js",
       "tags": [
@@ -138,12 +138,12 @@
         "require"
       ],
       "engines": {
-        "node": "14 || 15",
+        "node": ">= 14",
         "browsers": false
       }
     },
     {
-      "description": "TypeScript compiled against ES2019 for Node.js 10 || 12 || 14 || 15 with Require for modules",
+      "description": "TypeScript compiled against ES2019 for Node.js 10 || 12 || >= 14 with Require for modules",
       "directory": "edition-es2019",
       "entry": "index.js",
       "tags": [
@@ -153,12 +153,12 @@
         "require"
       ],
       "engines": {
-        "node": "10 || 12 || 14 || 15",
+        "node": "10 || 12 || >= 14",
         "browsers": false
       }
     },
     {
-      "description": "TypeScript compiled against ES2019 for Node.js 12 || 14 || 15 with Import for modules",
+      "description": "TypeScript compiled against ES2019 for Node.js 12 || >= 14 with Import for modules",
       "directory": "edition-es2019-esm",
       "entry": "index.js",
       "tags": [
@@ -168,7 +168,7 @@
         "import"
       ],
       "engines": {
-        "node": "12 || 14 || 15",
+        "node": "12 || >= 14",
         "browsers": false
       }
     },
