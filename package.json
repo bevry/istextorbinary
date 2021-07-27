@@ -1,7 +1,7 @@
 {
   "title": "Is Text or Binary?",
   "name": "istextorbinary",
-  "version": "5.12.0",
+  "version": "5.13.0",
   "description": "Determine if a filename and/or buffer is text or binary. Smarter detection than the other solutions.",
   "homepage": "https://github.com/bevry/istextorbinary",
   "license": "MIT",
@@ -10,14 +10,9 @@
     "binary",
     "browser",
     "check",
-    "deno",
-    "deno-edition",
-    "deno-entry",
-    "denoland",
     "detect",
     "encoding",
     "es2019",
-    "esnext",
     "ext",
     "extension",
     "extensions",
@@ -43,7 +38,7 @@
   ],
   "badges": {
     "list": [
-      "travisci",
+      "githubworkflow",
       "npmversion",
       "npmdownloads",
       "daviddm",
@@ -60,6 +55,7 @@
       "wishlist"
     ],
     "config": {
+      "githubWorkflow": "bevry",
       "githubSponsorsUsername": "balupton",
       "buymeacoffeeUsername": "balupton",
       "cryptoURL": "https://bevry.me/crypto",
@@ -69,7 +65,6 @@
       "patreonUsername": "bevry",
       "paypalURL": "https://bevry.me/paypal",
       "wishlistURL": "https://bevry.me/wishlist",
-      "travisTLD": "com",
       "githubUsername": "bevry",
       "githubRepository": "istextorbinary",
       "githubSlug": "bevry/istextorbinary",
@@ -114,7 +109,7 @@
       "engines": false
     },
     {
-      "description": "TypeScript compiled against ES2019 for web browsers with Import for modules",
+      "description": "TypeScript compiled against ES2020 for web browsers with Import for modules",
       "directory": "edition-browsers",
       "entry": "index.js",
       "tags": [
@@ -128,22 +123,7 @@
       }
     },
     {
-      "description": "TypeScript compiled against ESNext for Node.js 14 || 15 with Require for modules",
-      "directory": "edition-esnext",
-      "entry": "index.js",
-      "tags": [
-        "compiled",
-        "javascript",
-        "esnext",
-        "require"
-      ],
-      "engines": {
-        "node": "14 || 15",
-        "browsers": false
-      }
-    },
-    {
-      "description": "TypeScript compiled against ES2019 for Node.js 10 || 12 || 14 || 15 with Require for modules",
+      "description": "TypeScript compiled against ES2019 for Node.js 10 || 12 || 14 with Require for modules",
       "directory": "edition-es2019",
       "entry": "index.js",
       "tags": [
@@ -153,12 +133,12 @@
         "require"
       ],
       "engines": {
-        "node": "10 || 12 || 14 || 15",
+        "node": "10 || 12 || 14",
         "browsers": false
       }
     },
     {
-      "description": "TypeScript compiled against ES2019 for Node.js 12 || 14 || 15 with Import for modules",
+      "description": "TypeScript compiled against ES2019 for Node.js 12 || 14 with Import for modules",
       "directory": "edition-es2019-esm",
       "entry": "index.js",
       "tags": [
@@ -168,86 +148,68 @@
         "import"
       ],
       "engines": {
-        "node": "12 || 14 || 15",
+        "node": "12 || 14",
         "browsers": false
-      }
-    },
-    {
-      "description": "TypeScript source code made to be compatible with Deno",
-      "directory": "edition-deno",
-      "entry": "index.ts",
-      "tags": [
-        "typescript",
-        "import",
-        "deno"
-      ],
-      "engines": {
-        "deno": true,
-        "browsers": true
       }
     }
   ],
   "types": "./compiled-types/",
   "type": "module",
-  "main": "index.cjs",
+  "main": "edition-es2019/index.js",
   "exports": {
     "node": {
       "import": "./edition-es2019-esm/index.js",
-      "default": "./index.cjs",
-      "require": "./edition-esnext/index.js"
+      "require": "./edition-es2019/index.js"
     },
     "browser": {
       "import": "./edition-browsers/index.js"
     }
   },
-  "deno": "edition-deno/index.ts",
   "browser": "edition-browsers/index.js",
   "module": "edition-browsers/index.js",
   "dependencies": {
-    "binaryextensions": "^4.15.0",
-    "editions": "^6.1.0",
-    "textextensions": "^5.11.0"
+    "binaryextensions": "^4.16.0",
+    "textextensions": "^5.12.0"
   },
   "devDependencies": {
-    "@bevry/update-contributors": "^1.17.0",
-    "@typescript-eslint/eslint-plugin": "^4.6.0",
-    "@typescript-eslint/parser": "^4.6.0",
-    "assert-helpers": "^8.1.0",
-    "eslint": "^7.12.1",
+    "@bevry/update-contributors": "^1.18.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "assert-helpers": "^8.2.0",
+    "eslint": "^7.31.0",
     "eslint-config-bevry": "^3.23.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "filedirname": "^2.4.0",
-    "kava": "^5.12.0",
-    "make-deno-edition": "^1.2.0",
-    "prettier": "^2.1.2",
-    "projectz": "^2.16.0",
-    "surge": "^0.21.6",
-    "typedoc": "^0.19.2",
-    "typescript": "^4.0.5",
-    "valid-directory": "^3.4.0",
-    "valid-module": "^1.14.0"
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "filedirname": "^2.5.0",
+    "kava": "^5.13.0",
+    "make-deno-edition": "^1.3.0",
+    "prettier": "^2.3.2",
+    "projectz": "^2.18.0",
+    "surge": "^0.23.0",
+    "typedoc": "^0.21.4",
+    "typescript": "4.3.5",
+    "valid-directory": "^3.7.0",
+    "valid-module": "^1.15.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
-    "our:compile": "npm run our:compile:deno && npm run our:compile:edition-browsers && npm run our:compile:edition-es2019 && npm run our:compile:edition-es2019-esm && npm run our:compile:edition-esnext && npm run our:compile:types",
+    "our:compile": "npm run our:compile:deno && npm run our:compile:edition-browsers && npm run our:compile:edition-es2019 && npm run our:compile:edition-es2019-esm && npm run our:compile:types",
     "our:compile:deno": "make-deno-edition --attempt",
-    "our:compile:edition-browsers": "tsc --module ESNext --target ES2019 --outDir ./edition-browsers --project tsconfig.json && ( test ! -d edition-browsers/source || ( mv edition-browsers/source edition-temp && rm -Rf edition-browsers && mv edition-temp edition-browsers ) )",
+    "our:compile:edition-browsers": "tsc --module ESNext --target ES2020 --outDir ./edition-browsers --project tsconfig.json && ( test ! -d edition-browsers/source || ( mv edition-browsers/source edition-temp && rm -Rf edition-browsers && mv edition-temp edition-browsers ) )",
     "our:compile:edition-es2019": "tsc --module commonjs --target ES2019 --outDir ./edition-es2019 --project tsconfig.json && ( test ! -d edition-es2019/source || ( mv edition-es2019/source edition-temp && rm -Rf edition-es2019 && mv edition-temp edition-es2019 ) ) && echo '{\"type\": \"commonjs\"}' > edition-es2019/package.json",
     "our:compile:edition-es2019-esm": "tsc --module ESNext --target ES2019 --outDir ./edition-es2019-esm --project tsconfig.json && ( test ! -d edition-es2019-esm/source || ( mv edition-es2019-esm/source edition-temp && rm -Rf edition-es2019-esm && mv edition-temp edition-es2019-esm ) ) && echo '{\"type\": \"module\"}' > edition-es2019-esm/package.json",
-    "our:compile:edition-esnext": "tsc --module commonjs --target ESNext --outDir ./edition-esnext --project tsconfig.json && ( test ! -d edition-esnext/source || ( mv edition-esnext/source edition-temp && rm -Rf edition-esnext && mv edition-temp edition-esnext ) ) && echo '{\"type\": \"commonjs\"}' > edition-esnext/package.json",
     "our:compile:types": "tsc --project tsconfig.json --emitDeclarationOnly --declaration --declarationMap --declarationDir ./compiled-types && ( test ! -d compiled-types/source || ( mv compiled-types/source edition-temp && rm -Rf compiled-types && mv edition-temp compiled-types ) )",
     "our:deploy": "echo no need for this project",
     "our:meta": "npm run our:meta:contributors && npm run our:meta:docs && npm run our:meta:projectz",
     "our:meta:contributors": "update-contributors",
     "our:meta:docs": "npm run our:meta:docs:typedoc",
-    "our:meta:docs:typedoc": "rm -Rf ./docs && typedoc --mode file --exclude '**/+(*test*|node_modules)' --excludeExternals --name \"$npm_package_name\" --readme ./README.md --out ./docs ./source",
+    "our:meta:docs:typedoc": "rm -Rf ./docs && typedoc --exclude '**/+(*test*|node_modules)' --excludeExternals --out ./docs ./source",
     "our:meta:projectz": "projectz compile",
     "our:release": "npm run our:release:prepare && npm run our:release:check-changelog && npm run our:release:check-dirty && npm run our:release:tag && npm run our:release:push",
     "our:release:check-changelog": "cat ./HISTORY.md | grep v$npm_package_version || (echo add a changelog entry for v$npm_package_version && exit -1)",
     "our:release:check-dirty": "git diff --exit-code",
     "our:release:prepare": "npm run our:clean && npm run our:compile && npm run our:test && npm run our:meta",
-    "our:release:push": "git push origin master && git push origin --tags",
+    "our:release:push": "git push origin && git push origin --tags",
     "our:release:tag": "export MESSAGE=$(cat ./HISTORY.md | sed -n \"/## v$npm_package_version/,/##/p\" | sed 's/## //' | awk 'NR>1{print buf}{buf = $0}') && test \"$MESSAGE\" || (echo 'proper changelog entry not found' && exit -1) && git tag v$npm_package_version -am \"$MESSAGE\"",
     "our:setup": "npm run our:setup:install",
     "our:setup:install": "npm install",
@@ -257,7 +219,7 @@
     "our:verify:eslint": "eslint --fix --ignore-pattern '**/*.d.ts' --ignore-pattern '**/vendor/' --ignore-pattern '**/node_modules/' --ext .mjs,.js,.jsx,.ts,.tsx ./source",
     "our:verify:module": "valid-module",
     "our:verify:prettier": "prettier --write .",
-    "test": "node ./test.cjs"
+    "test": "node ./edition-es2019/test.js"
   },
   "eslintConfig": {
     "extends": [
