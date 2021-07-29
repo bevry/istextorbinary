@@ -50,7 +50,7 @@ Ever since 2012, this module's superior accuracy and performance has been essent
 
 ## Usage
 
-[Complete API Documentation.](http://master.istextorbinary.bevry.surge.sh/docs/globals.html)
+[Complete API Documentation.](http://master.istextorbinary.bevry.surge.sh/docs/)
 
 ```typescript
 import { isText, isBinary, getEncoding } from 'istextorbinary'
@@ -93,7 +93,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//cdn.skypack.dev/istextorbinary@^5.14.0'
+    import * as pkg from '//cdn.skypack.dev/istextorbinary@^5.15.0'
 </script>
 ```
 
@@ -101,7 +101,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//unpkg.com/istextorbinary@^5.14.0'
+    import * as pkg from '//unpkg.com/istextorbinary@^5.15.0'
 </script>
 ```
 
@@ -109,7 +109,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/istextorbinary@5.14.0'
+    import * as pkg from '//dev.jspm.io/istextorbinary@5.15.0'
 </script>
 ```
 
