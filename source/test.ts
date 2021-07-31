@@ -30,7 +30,7 @@ const tests = [
 		filename: join(fixturesPath, 'issue9.wxml'),
 		text: true,
 		binary: false,
-		encoding: 'binary', // fails encoding detection
+		encoding: 'utf8',
 	},
 	{
 		filename: join(fixturesPath, 'jpg_disguised_as.txt'),
@@ -76,6 +76,29 @@ const tests = [
 	},
 ]
 
+const multibyteUtf8 = [
+	// 1. When there's problem in the chunkEnd
+	// * 2 bytes
+	'12345678901234567890123Ф',
+	// * 3 bytes
+	'12345678901234567890123안',
+	'1234567890123456789012안',
+	// * 4 bytes
+	'12345678901234567890123😀',
+	'1234567890123456789012😀',
+	'123456789012345678901😀',
+	// 2. When there's a problem in the chunkBegin
+	// * 2 bytes
+	'dummyФ12345678901234567890123',
+	// * 3 bytes
+	'dummy안12345678901234567890123',
+	'dummy안1234567890123456789012',
+	// * 4 bytes
+	'dummy😀12345678901234567890123',
+	'dummy😀1234567890123456789012',
+	'dummy😀123456789012345678901',
+]
+
 // Tests
 kava.suite('istextorbinary', function (suite, test) {
 	tests.forEach(function ({ filename, text, binary, encoding }) {
@@ -89,6 +112,12 @@ kava.suite('istextorbinary', function (suite, test) {
 
 			// encoding
 			equal(getEncoding(buffer), encoding, 'getEncoding')
+		})
+	})
+
+	multibyteUtf8.forEach(function (str) {
+		test(str, function () {
+			equal(getEncoding(Buffer.from(str)), 'utf8')
 		})
 	})
 })

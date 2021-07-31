@@ -110,7 +110,20 @@ export function getEncoding(
 		return encoding
 	} else {
 		// Extract
-		const chunkEnd = Math.min(buffer.length, chunkBegin + chunkLength)
+		chunkBegin = getChunkBegin(buffer, chunkBegin)
+		if (chunkBegin === -1) {
+			return binaryEncoding
+		}
+
+		const chunkEnd = getChunkEnd(
+			buffer,
+			Math.min(buffer.length, chunkBegin + chunkLength)
+		)
+
+		if (chunkEnd > buffer.length) {
+			return binaryEncoding
+		}
+
 		const contentChunkUTF8 = buffer.toString(textEncoding, chunkBegin, chunkEnd)
 
 		// Detect encoding
@@ -127,4 +140,118 @@ export function getEncoding(
 		// Return
 		return textEncoding
 	}
+}
+
+// The functions below are created to handle multibyte utf8 characters.
+// To understand how the encoding works,
+// check this article: https://en.wikipedia.org/wiki/UTF-8#Encoding
+
+function getChunkBegin(buf: Buffer, chunkBegin: number) {
+	// If it's the beginning, just return.
+	if (chunkBegin === 0) {
+		return 0
+	}
+
+	if (!isLaterByteOfUtf8(buf[chunkBegin])) {
+		return chunkBegin
+	}
+
+	let begin = chunkBegin - 3
+
+	if (begin >= 0) {
+		if (isFirstByteOf4ByteChar(buf[begin])) {
+			return begin
+		}
+	}
+
+	begin = chunkBegin - 2
+
+	if (begin >= 0) {
+		if (
+			isFirstByteOf4ByteChar(buf[begin]) ||
+			isFirstByteOf3ByteChar(buf[begin])
+		) {
+			return begin
+		}
+	}
+
+	begin = chunkBegin - 1
+
+	if (begin >= 0) {
+		// Is it a 4-byte, 3-byte utf8 character?
+		if (
+			isFirstByteOf4ByteChar(buf[begin]) ||
+			isFirstByteOf3ByteChar(buf[begin]) ||
+			isFirstByteOf2ByteChar(buf[begin])
+		) {
+			return begin
+		}
+	}
+
+	return -1
+}
+
+function getChunkEnd(buf: Buffer, chunkEnd: number) {
+	// If it's the end, just return.
+	if (chunkEnd === buf.length) {
+		return chunkEnd
+	}
+
+	let index = chunkEnd - 3
+
+	if (index >= 0) {
+		if (isFirstByteOf4ByteChar(buf[index])) {
+			return chunkEnd + 1
+		}
+	}
+
+	index = chunkEnd - 2
+
+	if (index >= 0) {
+		if (isFirstByteOf4ByteChar(buf[index])) {
+			return chunkEnd + 2
+		}
+
+		if (isFirstByteOf3ByteChar(buf[index])) {
+			return chunkEnd + 1
+		}
+	}
+
+	index = chunkEnd - 1
+
+	if (index >= 0) {
+		if (isFirstByteOf4ByteChar(buf[index])) {
+			return chunkEnd + 3
+		}
+
+		if (isFirstByteOf3ByteChar(buf[index])) {
+			return chunkEnd + 2
+		}
+
+		if (isFirstByteOf2ByteChar(buf[index])) {
+			return chunkEnd + 1
+		}
+	}
+
+	return chunkEnd
+}
+
+function isFirstByteOf4ByteChar(byte: number) {
+	// eslint-disable-next-line no-bitwise
+	return byte >> 3 === 30 // 11110xxx?
+}
+
+function isFirstByteOf3ByteChar(byte: number) {
+	// eslint-disable-next-line no-bitwise
+	return byte >> 4 === 14 // 1110xxxx?
+}
+
+function isFirstByteOf2ByteChar(byte: number) {
+	// eslint-disable-next-line no-bitwise
+	return byte >> 5 === 6 // 110xxxxx?
+}
+
+function isLaterByteOfUtf8(byte: number) {
+	// eslint-disable-next-line no-bitwise
+	return byte >> 6 === 2 // 10xxxxxx?
 }
