@@ -93,7 +93,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//cdn.skypack.dev/istextorbinary@^5.15.0'
+    import * as pkg from '//cdn.skypack.dev/istextorbinary@^6.0.0'
 </script>
 ```
 
@@ -101,7 +101,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//unpkg.com/istextorbinary@^5.15.0'
+    import * as pkg from '//unpkg.com/istextorbinary@^6.0.0'
 </script>
 ```
 
@@ -109,7 +109,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/istextorbinary@5.15.0'
+    import * as pkg from '//dev.jspm.io/istextorbinary@6.0.0'
 </script>
 ```
 
@@ -176,6 +176,7 @@ These amazing people have contributed code to this project:
 
 <ul><li><a href="https://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/istextorbinary">view contributions</a></li>
 <li><a href="https://github.com/sibnerian">Ian Sibner</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=sibnerian" title="View the GitHub contributions of Ian Sibner on repository bevry/istextorbinary">view contributions</a></li>
+<li><a href="https://github.com/sainthkh">Kukhyeon Heo</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=sainthkh" title="View the GitHub contributions of Kukhyeon Heo on repository bevry/istextorbinary">view contributions</a></li>
 <li><a href="https://github.com/mikeumus">Michael Mooring</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=mikeumus" title="View the GitHub contributions of Michael Mooring on repository bevry/istextorbinary">view contributions</a></li>
 <li><a href="https://github.com/robloach">Rob Loach</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=robloach" title="View the GitHub contributions of Rob Loach on repository bevry/istextorbinary">view contributions</a></li>
 <li><a href="https://github.com/AlbinoDrought">Sean</a> — <a href="https://github.com/bevry/istextorbinary/commits?author=AlbinoDrought" title="View the GitHub contributions of Sean on repository bevry/istextorbinary">view contributions</a></li>

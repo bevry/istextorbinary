@@ -1,5 +1,11 @@
 # History
 
+## v6.0.0 2021 August 1
+
+-   Thanks to [Kukhyeon Heo](https://github.com/sainthkh) for [pull request #214](https://github.com/bevry/istextorbinary/pull/214) `istextorbinary` can now speak UTF8 multibyte characters, now understanding that Crilly, CJK, Emoji, etc. are not binary. This is a big win.
+    -   Closes [issue #13](https://github.com/bevry/istextorbinary/issues/13) reported by [dlsgusrn7577](https://github.com/dlsgusrn7577)
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v5.15.0 2021 July 30
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)

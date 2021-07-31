@@ -9,6 +9,7 @@ import binaryExtensions from 'binaryextensions'
 export interface EncodingOpts {
 	/** Defaults to 24 */
 	chunkLength?: number
+
 	/** If not provided, will check the start, beginning, and end */
 	chunkBegin?: number
 }
@@ -142,9 +143,10 @@ export function getEncoding(
 	}
 }
 
+// ====================================
 // The functions below are created to handle multibyte utf8 characters.
-// To understand how the encoding works,
-// check this article: https://en.wikipedia.org/wiki/UTF-8#Encoding
+// To understand how the encoding works, check this article: https://en.wikipedia.org/wiki/UTF-8#Encoding
+// @todo add documentation for these
 
 function getChunkBegin(buf: Buffer, chunkBegin: number) {
 	// If it's the beginning, just return.
