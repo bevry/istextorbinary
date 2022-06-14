@@ -159,6 +159,7 @@
   "main": "edition-es2019/index.js",
   "exports": {
     "node": {
+      "types": "./compiled-types/index.d.ts",
       "import": "./edition-es2019-esm/index.js",
       "require": "./edition-es2019/index.js"
     },
