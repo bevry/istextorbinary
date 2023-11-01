@@ -15,19 +15,24 @@ jobs:
           - '12'
           - '14'
           - '16'
+          - '18'
+          - '20'
+          - '21'
     runs-on: ${{ matrix.os }}
-    continue-on-error: ${{ contains('macos-latest windows-latest', matrix.os) }}
+    continue-on-error: >-
+      ${{ contains('10 12', matrix.node) || contains('macos-latest
+      windows-latest', matrix.os) }}
     steps:
       - uses: actions/checkout@v2
       - name: Install desired Node.js version
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '20'
       - run: npm run our:setup
       - run: npm run our:compile
       - run: npm run our:verify
       - name: Install targeted Node.js
-        if: ${{ matrix.node != 14 }}
+        if: ${{ matrix.node != 20 }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
@@ -41,7 +46,7 @@ jobs:
       - name: Install desired Node.js version
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '20'
       - run: npm run our:setup
       - run: npm run our:compile
       - run: npm run our:meta

@@ -1,5 +1,11 @@
 # History
 
+## v7.0.0 2023 November 1
+
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+-   Updated license from [`MIT`](http://spdx.org/licenses/MIT.html) to [`Artistic-2.0`](http://spdx.org/licenses/Artistic-2.0.html)
+-   Minimum required node version changed from `node: >=10` to `node: >=14` to keep up with mandatory ecosystem changes
+
 ## v6.0.0 2021 August 1
 
 -   Thanks to [Kukhyeon Heo](https://github.com/sainthkh) for [pull request #214](https://github.com/bevry/istextorbinary/pull/214) `istextorbinary` can now speak UTF8 multibyte characters, now understanding that Crilly, CJK, Emoji, etc. are not binary. This is a big win.
