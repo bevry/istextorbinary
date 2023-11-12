@@ -170,7 +170,7 @@
   "module": "edition-browsers/index.js",
   "dependencies": {
     "binaryextensions": "^4.19.0",
-    "textextensions": "^5.16.0"
+    "textextensions": "^6.0.0"
   },
   "devDependencies": {
     "@bevry/update-contributors": "^1.22.0",
