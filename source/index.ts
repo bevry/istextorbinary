@@ -25,7 +25,7 @@ export interface EncodingOpts {
  */
 export function isText(
 	filename?: string | null,
-	buffer?: Buffer | null,
+	buffer?: Buffer | null
 ): boolean | null {
 	// Test extensions
 	if (filename) {
@@ -75,7 +75,7 @@ export function isBinary(filename?: string | null, buffer?: Buffer | null) {
  */
 export function getEncoding(
 	buffer: Buffer | null,
-	opts?: EncodingOpts,
+	opts?: EncodingOpts
 ): 'utf8' | 'binary' | null {
 	// Check
 	if (!buffer) return null
@@ -118,7 +118,7 @@ export function getEncoding(
 
 		const chunkEnd = getChunkEnd(
 			buffer,
-			Math.min(buffer.length, chunkBegin + chunkLength),
+			Math.min(buffer.length, chunkBegin + chunkLength)
 		)
 
 		if (chunkEnd > buffer.length) {
