@@ -1,7 +1,7 @@
 {
   "title": "Is Text or Binary?",
   "name": "istextorbinary",
-  "version": "8.2.0",
+  "version": "9.0.0",
   "description": "Determine if a filename and/or buffer is text or binary. Smarter detection than the other solutions.",
   "homepage": "https://github.com/bevry/istextorbinary",
   "license": "Artistic-2.0",
@@ -14,6 +14,7 @@
     "encoding",
     "es2019",
     "es2022",
+    "es5",
     "ext",
     "extension",
     "extensions",
@@ -100,7 +101,7 @@
     "url": "https://github.com/bevry/istextorbinary.git"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=4"
   },
   "editions": [
     {
@@ -144,7 +145,7 @@
       }
     },
     {
-      "description": "TypeScript compiled against ES2019 for Node.js 10 || 12 || 14 || 16 || 18 || 20 || 21 with Require for modules",
+      "description": "TypeScript compiled against ES2019 for Node.js 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21 with Require for modules",
       "directory": "edition-es2019",
       "entry": "index.js",
       "tags": [
@@ -154,7 +155,22 @@
         "require"
       ],
       "engines": {
-        "node": "10 || 12 || 14 || 16 || 18 || 20 || 21",
+        "node": "6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21",
+        "browsers": false
+      }
+    },
+    {
+      "description": "TypeScript compiled against ES5 for Node.js 4 || 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21 with Require for modules",
+      "directory": "edition-es5",
+      "entry": "index.js",
+      "tags": [
+        "compiled",
+        "javascript",
+        "es5",
+        "require"
+      ],
+      "engines": {
+        "node": "4 || 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21",
         "browsers": false
       }
     },
@@ -203,37 +219,37 @@
   "browser": "edition-browsers/index.js",
   "module": "edition-browsers/index.js",
   "dependencies": {
-    "binaryextensions": "^6.4.0",
-    "editions": "^6.13.0",
-    "textextensions": "^6.4.0"
+    "binaryextensions": "^6.5.0",
+    "editions": "^6.15.0",
+    "textextensions": "^6.5.0"
   },
   "devDependencies": {
     "@bevry/update-contributors": "^1.23.0",
-    "@types/node": "^20.9.3",
+    "@types/node": "^20.9.4",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
     "assert-helpers": "^11.5.0",
     "eslint": "^8.54.0",
-    "eslint-config-bevry": "^5.0.0",
+    "eslint-config-bevry": "^5.1.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
-    "filedirname": "^2.10.0",
     "kava": "^7.3.0",
     "prettier": "^3.1.0",
-    "projectz": "^3.2.0",
+    "projectz": "^3.3.0",
     "surge": "^0.23.1",
     "typedoc": "^0.25.3",
     "typescript": "5.2.2",
-    "valid-directory": "^4.4.0",
-    "valid-module": "^2.4.0"
+    "valid-directory": "^4.5.0",
+    "valid-module": "^2.5.0"
   },
   "scripts": {
     "our:clean": "rm -rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
-    "our:compile": "npm run our:compile:edition-browsers && npm run our:compile:edition-es2019 && npm run our:compile:edition-es2019-esm && npm run our:compile:edition-es2022 && npm run our:compile:edition-types",
+    "our:compile": "npm run our:compile:edition-browsers && npm run our:compile:edition-es2019 && npm run our:compile:edition-es2019-esm && npm run our:compile:edition-es2022 && npm run our:compile:edition-es5 && npm run our:compile:edition-types",
     "our:compile:edition-browsers": "tsc --module ESNext --target ES2022 --outDir ./edition-browsers --project tsconfig.json && ( test ! -d edition-browsers/source || ( mv edition-browsers/source edition-temp && rm -rf edition-browsers && mv edition-temp edition-browsers ) )",
     "our:compile:edition-es2019": "tsc --module commonjs --target ES2019 --outDir ./edition-es2019 --project tsconfig.json && ( test ! -d edition-es2019/source || ( mv edition-es2019/source edition-temp && rm -rf edition-es2019 && mv edition-temp edition-es2019 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es2019/package.json",
     "our:compile:edition-es2019-esm": "tsc --module ESNext --target ES2019 --outDir ./edition-es2019-esm --project tsconfig.json && ( test ! -d edition-es2019-esm/source || ( mv edition-es2019-esm/source edition-temp && rm -rf edition-es2019-esm && mv edition-temp edition-es2019-esm ) ) && printf '%s' '{\"type\": \"module\"}' > edition-es2019-esm/package.json",
     "our:compile:edition-es2022": "tsc --module commonjs --target ES2022 --outDir ./edition-es2022 --project tsconfig.json && ( test ! -d edition-es2022/source || ( mv edition-es2022/source edition-temp && rm -rf edition-es2022 && mv edition-temp edition-es2022 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es2022/package.json",
+    "our:compile:edition-es5": "tsc --module commonjs --target ES5 --outDir ./edition-es5 --project tsconfig.json && ( test ! -d edition-es5/source || ( mv edition-es5/source edition-temp && rm -rf edition-es5 && mv edition-temp edition-es5 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es5/package.json",
     "our:compile:edition-types": "tsc --emitDeclarationOnly --declaration --declarationMap --declarationDir ./edition-types --project tsconfig.json && ( test ! -d edition-types/source || ( mv edition-types/source edition-temp && rm -rf edition-types && mv edition-temp edition-types ) )",
     "our:deploy": "printf '%s\n' 'no need for this project'",
     "our:meta": "npm run our:meta:contributors && npm run our:meta:docs && npm run our:meta:projectz",
