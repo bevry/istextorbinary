@@ -1,16 +1,22 @@
 /* eslint no-sync:0 */
 
-// Import
-import { join } from 'path'
-import { readFileSync } from 'fs'
-import { equal } from 'assert-helpers'
-import kava from 'kava'
+// us
 import { isText, isBinary, getEncoding } from './index.js'
 
-// Paths
-const fixturesPath = /* cwd */ 'test-fixtures'
+// external
+import { equal } from 'assert-helpers'
+import kava from 'kava'
 
-// Tests
+// builtin
+import { readFileSync } from 'fs'
+
+// paths
+import { join } from 'path'
+import filedirname from 'filedirname'
+const [file, dir] = filedirname()
+const fixturesPath = join(dir, '..', 'test-fixtures')
+
+// fixtures
 const tests = [
 	{
 		filename: join(fixturesPath, 'utf8.txt'),
@@ -102,6 +108,7 @@ kava.suite('istextorbinary', function (suite, test) {
 	tests.forEach(function ({ filename, text, binary, encoding }) {
 		test(String(filename), function () {
 			const buffer = filename ? readFileSync(filename) : null
+
 			// text
 			equal(isText(filename, buffer), text, 'isText')
 
