@@ -93,7 +93,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//cdn.skypack.dev/istextorbinary@^9.0.0'
+    import * as pkg from '//cdn.skypack.dev/istextorbinary@^9.1.0'
 </script>
 ```
 
@@ -101,7 +101,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//unpkg.com/istextorbinary@^9.0.0'
+    import * as pkg from '//unpkg.com/istextorbinary@^9.1.0'
 </script>
 ```
 
@@ -109,7 +109,7 @@ getEncoding(aBuffer) // returns 'binary' if it contained non-utf8 characters, ot
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/istextorbinary@9.0.0'
+    import * as pkg from '//dev.jspm.io/istextorbinary@9.1.0'
 </script>
 ```
 

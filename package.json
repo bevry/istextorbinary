@@ -1,7 +1,7 @@
 {
   "title": "Is Text or Binary?",
   "name": "istextorbinary",
-  "version": "9.0.0",
+  "version": "9.1.0",
   "description": "Determine if a filename and/or buffer is text or binary. Smarter detection than the other solutions.",
   "homepage": "https://github.com/bevry/istextorbinary",
   "license": "Artistic-2.0",
@@ -219,13 +219,13 @@
   "browser": "edition-browsers/index.js",
   "module": "edition-browsers/index.js",
   "dependencies": {
-    "binaryextensions": "^6.5.0",
+    "binaryextensions": "^6.6.0",
     "editions": "^6.15.0",
-    "textextensions": "^6.5.0"
+    "textextensions": "^6.6.0"
   },
   "devDependencies": {
     "@bevry/update-contributors": "^1.23.0",
-    "@types/node": "^20.9.4",
+    "@types/node": "^20.10.0",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
     "assert-helpers": "^11.5.0",
