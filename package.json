@@ -1,7 +1,7 @@
 {
   "title": "Is Text or Binary?",
   "name": "istextorbinary",
-  "version": "9.1.0",
+  "version": "9.2.0",
   "description": "Determine if a filename and/or buffer is text or binary. Smarter detection than the other solutions.",
   "homepage": "https://github.com/bevry/istextorbinary",
   "license": "Artistic-2.0",
@@ -10,6 +10,10 @@
     "binary",
     "browser",
     "check",
+    "deno",
+    "deno-edition",
+    "deno-entry",
+    "denoland",
     "detect",
     "encoding",
     "es2019",
@@ -199,6 +203,20 @@
         "import"
       ],
       "engines": false
+    },
+    {
+      "description": "TypeScript source code made to be compatible with Deno",
+      "directory": "edition-deno",
+      "entry": "index.ts",
+      "tags": [
+        "typescript",
+        "import",
+        "deno"
+      ],
+      "engines": {
+        "deno": true,
+        "browsers": true
+      }
     }
   ],
   "types": "edition-types/index.d.ts",
@@ -216,11 +234,12 @@
       "import": "./edition-browsers/index.js"
     }
   },
+  "deno": "edition-deno/index.ts",
   "browser": "edition-browsers/index.js",
   "module": "edition-browsers/index.js",
   "dependencies": {
-    "binaryextensions": "^6.6.0",
-    "editions": "^6.15.0",
+    "binaryextensions": "^6.7.0",
+    "editions": "^6.16.0",
     "textextensions": "^6.6.0"
   },
   "devDependencies": {
@@ -228,13 +247,14 @@
     "@types/node": "^20.10.0",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
-    "assert-helpers": "^11.5.0",
+    "assert-helpers": "^11.6.0",
     "eslint": "^8.54.0",
-    "eslint-config-bevry": "^5.1.0",
+    "eslint-config-bevry": "^5.2.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
-    "filedirname": "^3.0.1",
+    "filedirname": "^3.1.0",
     "kava": "^7.3.0",
+    "make-deno-edition": "^2.0.0",
     "prettier": "^3.1.0",
     "projectz": "^3.3.0",
     "surge": "^0.23.1",
@@ -245,7 +265,8 @@
   },
   "scripts": {
     "our:clean": "rm -rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
-    "our:compile": "npm run our:compile:edition-browsers && npm run our:compile:edition-es2019 && npm run our:compile:edition-es2019-esm && npm run our:compile:edition-es2022 && npm run our:compile:edition-es5 && npm run our:compile:edition-types",
+    "our:compile": "npm run our:compile:deno && npm run our:compile:edition-browsers && npm run our:compile:edition-es2019 && npm run our:compile:edition-es2019-esm && npm run our:compile:edition-es2022 && npm run our:compile:edition-es5 && npm run our:compile:edition-types",
+    "our:compile:deno": "make-deno-edition --attempt",
     "our:compile:edition-browsers": "tsc --module ESNext --target ES2022 --outDir ./edition-browsers --project tsconfig.json && ( test ! -d edition-browsers/source || ( mv edition-browsers/source edition-temp && rm -rf edition-browsers && mv edition-temp edition-browsers ) )",
     "our:compile:edition-es2019": "tsc --module commonjs --target ES2019 --outDir ./edition-es2019 --project tsconfig.json && ( test ! -d edition-es2019/source || ( mv edition-es2019/source edition-temp && rm -rf edition-es2019 && mv edition-temp edition-es2019 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es2019/package.json",
     "our:compile:edition-es2019-esm": "tsc --module ESNext --target ES2019 --outDir ./edition-es2019-esm --project tsconfig.json && ( test ! -d edition-es2019-esm/source || ( mv edition-es2019-esm/source edition-temp && rm -rf edition-es2019-esm && mv edition-temp edition-es2019-esm ) ) && printf '%s' '{\"type\": \"module\"}' > edition-es2019-esm/package.json",
