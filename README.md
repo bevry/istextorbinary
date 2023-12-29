@@ -150,8 +150,6 @@ This package is published with the following editions:
 #### Maintainers
 
 -   [Benjamin Lupton](https://balupton.com) — Accelerating collaborative wisdom.
--   [Michael Duane Mooring](https://mdm.cc) — We are the space generation; and if you don't know, https://www.spaceforce.mil https://www.virgingalactic.com https://www.spacex.com now you know.
--   [Rob Loach](https://github.com/robloach)
 
 #### Contributors
 
