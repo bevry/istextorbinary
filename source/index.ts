@@ -19,18 +19,24 @@ export interface EncodingOpts {
  * Determined by extension checks first (if filename is available), otherwise if unknown extension or no filename, will perform a slower buffer encoding detection.
  * This order is done, as extension checks are quicker, and also because encoding checks cannot guarantee accuracy for chars between utf8 and utf16.
  * The extension checks are performed using the resources https://github.com/bevry/textextensions and https://github.com/bevry/binaryextensions
+ *
+ * WARNING: in a browser, path detection is only reliable for POSIX paths (regardless of the underlying OS), depending on your bundler.
+ *
  * @param filename The filename for the file/buffer if available
  * @param buffer The buffer for the file if available
  * @returns Will be `null` if neither `filename` nor `buffer` were provided. Otherwise will be a boolean value with the detection result.
  */
 export function isText(
 	filename?: string | null,
-	buffer?: Buffer | null
+	buffer?: Uint8Array | null
 ): boolean | null {
 	// Test extensions
 	if (filename) {
 		// Extract filename
 		const parts = pathUtil.basename(filename).split('.').reverse()
+
+		// Remove the filename proper
+		parts.pop()
 
 		// Cycle extensions
 		for (const extension of parts) {
@@ -74,7 +80,7 @@ export function isBinary(filename?: string | null, buffer?: Buffer | null) {
  * @returns Will be `null` if `buffer` was not provided. Otherwise will be either `'utf8'` or `'binary'`
  */
 export function getEncoding(
-	buffer: Buffer | null,
+	buffer: Uint8Array | null,
 	opts?: EncodingOpts
 ): 'utf8' | 'binary' | null {
 	// Check
@@ -125,17 +131,8 @@ export function getEncoding(
 			return binaryEncoding
 		}
 
-		const contentChunkUTF8 = buffer.toString(textEncoding, chunkBegin, chunkEnd)
-
-		// Detect encoding
-		for (let i = 0; i < contentChunkUTF8.length; ++i) {
-			const charCode = contentChunkUTF8.charCodeAt(i)
-			if (charCode === 65533 || charCode <= 8) {
-				// 8 and below are control characters (e.g. backspace, null, eof, etc.)
-				// 65533 is the unknown character
-				// console.log(charCode, contentChunkUTF8[i])
-				return binaryEncoding
-			}
+		if (!isValidUTF8TextualData(buffer, chunkBegin, chunkEnd)) {
+			return binaryEncoding
 		}
 
 		// Return
@@ -143,12 +140,52 @@ export function getEncoding(
 	}
 }
 
+function isValidUTF8TextualData(
+	buf: Uint8Array,
+	chunkBegin: number,
+	chunkEnd: number
+) {
+	let expecting: number | null = null
+
+	for (let i = chunkBegin; i < chunkEnd; i++) {
+		const byte = buf[i]
+
+		if (expecting === null) {
+			if (isSingleByteChar(byte)) {
+				if (byte <= 8) {
+					return false
+				}
+			} else if (isFirstByteOf2ByteChar(byte)) {
+				expecting = 1
+			} else if (isFirstByteOf3ByteChar(byte)) {
+				expecting = 2
+			} else if (isFirstByteOf4ByteChar(byte)) {
+				expecting = 3
+			} else {
+				return false
+			}
+		} else {
+			if (!isLaterByteOfUtf8(byte)) {
+				return false
+			}
+
+			if (expecting === 1) {
+				expecting = null
+			} else {
+				expecting -= 1
+			}
+		}
+	}
+
+	return true
+}
+
 // ====================================
 // The functions below are created to handle multibyte utf8 characters.
 // To understand how the encoding works, check this article: https://en.wikipedia.org/wiki/UTF-8#Encoding
 // @todo add documentation for these
 
-function getChunkBegin(buf: Buffer, chunkBegin: number) {
+function getChunkBegin(buf: Uint8Array, chunkBegin: number) {
 	// If it's the beginning, just return.
 	if (chunkBegin === 0) {
 		return 0
@@ -193,7 +230,7 @@ function getChunkBegin(buf: Buffer, chunkBegin: number) {
 	return -1
 }
 
-function getChunkEnd(buf: Buffer, chunkEnd: number) {
+function getChunkEnd(buf: Uint8Array, chunkEnd: number) {
 	// If it's the end, just return.
 	if (chunkEnd === buf.length) {
 		return chunkEnd
@@ -256,4 +293,9 @@ function isFirstByteOf2ByteChar(byte: number) {
 function isLaterByteOfUtf8(byte: number) {
 	// eslint-disable-next-line no-bitwise
 	return byte >> 6 === 2 // 10xxxxxx?
+}
+
+function isSingleByteChar(byte: number) {
+	// eslint-disable-next-line no-bitwise
+	return byte >> 7 === 0 // 0xxxxxxx?
 }
