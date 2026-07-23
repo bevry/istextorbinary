@@ -19,58 +19,72 @@ const fixturesPath = join(dir, '..', 'test-fixtures')
 // fixtures
 const tests = [
 	{
-		filename: join(fixturesPath, 'utf8.txt'),
+		filename: 'utf8.txt',
 		text: true,
 		binary: false,
 		encoding: 'utf8',
 	},
 	{
-		filename: join(fixturesPath, 'image.jpg'),
+		filename: 'image.jpg',
 		text: false,
 		binary: true,
 		encoding: 'binary',
 	},
 	{
-		filename: join(fixturesPath, 'issue9.wxml'),
+		filename: 'issue9.wxml',
 		text: true,
 		binary: false,
 		encoding: 'utf8',
 	},
 	{
-		filename: join(fixturesPath, 'jpg_disguised_as.txt'),
+		filename: 'jpg_disguised_as.txt',
 		text: true, // fails extension detection
 		binary: false, // fails extension detection
 		encoding: 'binary',
 	},
 	{
-		filename: join(fixturesPath, 'jpg_right_to_left.jpg.txt.unknown'),
+		filename: 'jpg_right_to_left.jpg.txt.unknown',
 		text: true,
 		binary: false,
 		encoding: 'binary',
 	},
 	{
-		filename: join(fixturesPath, 'jpg_no_extension'),
+		filename: 'jpg_no_extension',
 		text: false,
 		binary: true,
 		encoding: 'binary',
 	},
 	{
-		filename: join(fixturesPath, 'txt_disguised_as.jpg'),
+		filename: 'txt_disguised_as.jpg',
 		text: false, // fails extension detection
 		binary: true, // fails extension detection
 		encoding: 'utf8',
 	},
 	{
-		filename: join(fixturesPath, 'txt_right_to_left.txt.jpg.unknown'),
+		filename: 'txt_right_to_left.txt.jpg.unknown',
 		text: false,
 		binary: true,
 		encoding: 'utf8',
 	},
 	{
-		filename: join(fixturesPath, 'txt_no_extension'),
+		filename: 'txt_no_extension',
 		text: true,
 		binary: false,
 		encoding: 'utf8',
+	},
+	{
+		filename: 'jpg.unknown_text_ext',
+		contents: 'txt_no_extension',
+		text: true,
+		binary: false,
+		encoding: 'utf8',
+	},
+	{
+		filename: 'txt.unknown_binary_ext',
+		contents: 'jpg_no_extension',
+		text: false,
+		binary: true,
+		encoding: 'binary',
 	},
 	{
 		filename: null,
@@ -105,15 +119,20 @@ const multibyteUtf8 = [
 
 // Tests
 kava.suite('istextorbinary', function (suite, test) {
-	tests.forEach(function ({ filename, text, binary, encoding }) {
+	tests.forEach(function (testCase) {
+		const { filename, text, binary, encoding } = testCase
+		const contents = 'contents' in testCase ? testCase.contents : null
+
 		test(String(filename), function () {
-			const buffer = filename ? readFileSync(filename) : null
+			const fullPath = filename ? join(fixturesPath, filename) : null
+			const contentsPath = contents ? join(fixturesPath, contents) : fullPath
+			const buffer = contentsPath ? readFileSync(contentsPath) : null
 
 			// text
-			equal(isText(filename, buffer), text, 'isText')
+			equal(isText(fullPath, buffer), text, 'isText')
 
 			// binary
-			equal(isBinary(filename, buffer), binary, 'isBinary')
+			equal(isBinary(fullPath, buffer), binary, 'isBinary')
 
 			// encoding
 			equal(getEncoding(buffer), encoding, 'getEncoding')
